@@ -1,22 +1,46 @@
 <settings>
+  <!--This sends everything else to /public -->
+<!--
   <mirrors>
     <mirror>
-      <!--This sends everything else to /public -->
       <id>nexus</id>
       <mirrorOf>external:*</mirrorOf>
-      <!-- your address may differ: -->
-      <url>http://${env.NEXUS_SERVICE_HOST}:${env.NEXUS_SERVICE_PORT}/nexus/content/groups/public</url>
+      <url>http://${env.NEXUS_SERVICE_HOST}:${env.NEXUS_SERVICE_PORT}/content/groups/public</url>
     </mirror>
   </mirrors>
+-->
+
+<servers>
+  <server>
+    <id>local-nexus</id>
+    <!--
+    <username>deployment</username>
+    <password>secret</password>
+  -->
+  </server>
+</servers>
+
+
   <profiles>
     <profile>
       <id>nexus</id>
+      <properties>
+        <!--
+        <altDeploymentRepository>local-nexus::default::http://${env.NEXUS_SERVICE_HOST}:${env.NEXUS_SERVICE_PORT}/service/local/staging/deploy/maven2</altDeploymentRepository>
+        <altReleaseDeploymentRepository>local-nexus::default::http://${env.NEXUS_SERVICE_HOST}:${env.NEXUS_SERVICE_PORT}/service/local/staging/deploy/maven2</altReleaseDeploymentRepository>
+      -->
+        <altDeploymentRepository>local-nexus::default::http://${env.NEXUS_SERVICE_HOST}:${env.NEXUS_SERVICE_PORT}/content/repositories/releases/</altDeploymentRepository>
+        <altReleaseDeploymentRepository>local-nexus::default::http://${env.NEXUS_SERVICE_HOST}:${env.NEXUS_SERVICE_PORT}/content/repositories/releases/</altReleaseDeploymentRepository>
+        <altSnapshotDeploymentRepository>local-nexus::default::http://${env.NEXUS_SERVICE_HOST}:${env.NEXUS_SERVICE_PORT}/content/repositories/snapshots/</altSnapshotDeploymentRepository>
+
+      </properties>
+
       <!--Enable snapshots for the built in central repo to direct -->
       <!--all requests to nexus via the mirror -->
       <repositories>
         <repository>
           <id>central</id>
-          <url>http://central.maven.org/</url>
+          <url>http://central</url>
           <releases><enabled>true</enabled></releases>
           <snapshots><enabled>true</enabled></snapshots>
         </repository>
@@ -24,7 +48,7 @@
      <pluginRepositories>
         <pluginRepository>
           <id>central</id>
-          <url>http://central.maven.org/</url>
+          <url>http://central</url>
           <releases><enabled>true</enabled></releases>
           <snapshots><enabled>true</enabled></snapshots>
         </pluginRepository>

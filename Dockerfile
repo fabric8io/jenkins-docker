@@ -84,7 +84,7 @@ ADD http://updates.jenkins-ci.org/latest/instant-messaging.hpi $JENKINS_HOME/plu
 
 # lets configure Maven
 ADD hudson.tasks.Maven.xml $JENKINS_HOME/
-ADD mvnsettings.xml $JENKINS_HOME/.m2/settings.xml
+ADD mvnsettings.xml /root/.m2/settings.xml
 
 # TODO add configuration...
 #ADD config.xml $JENKINS_HOME/
@@ -93,5 +93,5 @@ ADD mvnsettings.xml $JENKINS_HOME/.m2/settings.xml
 #ADD fabric8-cadvisor-IT-config.xml $JENKINS_HOME/jobs/fabric8-cadvisor-IT/config.xml
 
 USER root
-RUN chown -R jenkins:jenkins /var/jenkins_home
+RUN chown -R jenkins:jenkins /root/.m2/settings.xml /var/jenkins_home
 USER jenkins
