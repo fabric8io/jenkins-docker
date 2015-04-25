@@ -95,3 +95,6 @@ ADD mvnsettings.xml /root/.m2/settings.xml
 USER root
 RUN chown -R jenkins:jenkins /root/.m2/settings.xml /var/jenkins_home
 USER jenkins
+
+ENV NEXUS_USERNAME admin
+ENV NEXUS_PASSWORD admin123

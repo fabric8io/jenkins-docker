@@ -1,6 +1,5 @@
 <settings>
   <!--This sends everything else to /public -->
-<!--
   <mirrors>
     <mirror>
       <id>nexus</id>
@@ -8,15 +7,12 @@
       <url>http://${env.NEXUS_SERVICE_HOST}:${env.NEXUS_SERVICE_PORT}/content/groups/public</url>
     </mirror>
   </mirrors>
--->
 
 <servers>
   <server>
     <id>local-nexus</id>
-    <!--
-    <username>deployment</username>
-    <password>secret</password>
-  -->
+    <username>${env.NEXUS_USERNAME}</username>
+    <password>${env.NEXUS_PASSWORD}</password>
   </server>
 </servers>
 
