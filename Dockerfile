@@ -65,6 +65,7 @@ ADD http://updates.jenkins-ci.org/latest/git.hpi $JENKINS_HOME/plugins/
 ADD http://updates.jenkins-ci.org/latest/github-api.hpi $JENKINS_HOME/plugins/
 ADD http://updates.jenkins-ci.org/latest/github.hpi $JENKINS_HOME/plugins/
 ADD http://updates.jenkins-ci.org/latest/golang.hpi $JENKINS_HOME/plugins/
+ADD http://updates.jenkins-ci.org/latest/groovy.hpi $JENKINS_HOME/plugins/
 ADD http://updates.jenkins-ci.org/latest/groovy-postbuild.hpi $JENKINS_HOME/plugins/
 ADD http://updates.jenkins-ci.org/latest/instant-messaging.hpi $JENKINS_HOME/plugins/
 ADD http://updates.jenkins-ci.org/latest/ircbot.hpi $JENKINS_HOME/plugins/
@@ -84,7 +85,7 @@ ADD http://updates.jenkins-ci.org/latest/docker-build-publish.hpi $JENKINS_HOME/
 ADD http://updates.jenkins-ci.org/latest/docker-plugin.hpi $JENKINS_HOME/plugins/
 ADD http://updates.jenkins-ci.org/latest/jquery.hpi $JENKINS_HOME/plugins/
 ADD http://updates.jenkins-ci.org/latest/token-macro.hpi $JENKINS_HOME/plugins/
-A
+
 # TODO are these still required?
 ADD http://updates.jenkins-ci.org/latest/commit-message-trigger-plugin.hpi $JENKINS_HOME/plugins/
 ADD http://updates.jenkins-ci.org/latest/credentials.hpi $JENKINS_HOME/plugins/
