@@ -3,8 +3,16 @@
   <installations>
     <hudson.tasks.Maven_-MavenInstallation>
       <name>3.3.1</name>
-      <home>/opt/apache-maven-3.3.1</home>
-      <properties/>
+      <properties>
+        <hudson.tools.InstallSourceProperty>
+          <installers>
+            <hudson.tools.ZipExtractionInstaller>
+              <url>http://apache.mirror.anlx.net/maven/maven-3/3.3.1/binaries/apache-maven-3.3.1-bin.tar.gz</url>
+              <subdir>apache-maven-3.3.1</subdir>
+            </hudson.tools.ZipExtractionInstaller>
+          </installers>
+        </hudson.tools.InstallSourceProperty>
+      </properties>
     </hudson.tasks.Maven_-MavenInstallation>
   </installations>
 </hudson.tasks.Maven_-DescriptorImpl>
