@@ -9,8 +9,16 @@ USER root
 RUN yum install -y bzr mercurial
 
 # Go
+ENV PATH $PATH:/usr/local/go/bin
+ENV GOROOT /usr/local/go
+ENV GOPATH /go
+ENV PATH $PATH:$GOPATH/bin
+
 RUN wget -q https://storage.googleapis.com/golang/go1.4.linux-amd64.tar.gz && \
     tar -C /usr/local -xzf go1.4.linux-amd64.tar.gz
+
+RUN go get github.com/kr/godep
+RUN chown -R jenkins:jenkins /go
 
 # Maven
 ENV MAVEN_VERSION 3.3.1
@@ -24,8 +32,6 @@ RUN rm -rf apache-maven-${MAVEN_VERSION}-bin.tar.gz && \
 RUN mkdir -p /var/jenkins_home/.m2 && \
 	touch /var/jenkins_home/.m2/.keep
 
-RUN mkdir /go && \
-	chown jenkins:jenkins /go
 
 # Java JDK
 RUN wget -q --no-cookies --no-check-certificate --header "Cookie: oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/8u5-b13/jdk-8u5-linux-x64.rpm" -O jdk-8-linux-x64.rpm && \
@@ -39,10 +45,6 @@ RUN alternatives --install /usr/bin/java jar /usr/java/latest/bin/java 200000 &&
 # Switch to jenkibs user to set env vars and configure Jenkins
 USER jenkins
 
-ENV PATH $PATH:/usr/local/go/bin
-ENV GOROOT /usr/local/go
-ENV GOPATH /go
-ENV PATH $PATH:$GOPATH/bin
 
 ENV M2_HOME /opt/apache-maven-${MAVEN_VERSION}
 ENV M2 $M2_HOME/bin
@@ -108,15 +110,12 @@ ADD http://updates.jenkins-ci.org/latest/workflow-support.hpi $JENKINS_HOME/plug
 ADD http://updates.jenkins-ci.org/latest/workflow-support.hpi $JENKINS_HOME/plugins/
 
 
-# lets configure Maven
-ADD hudson.tasks.Maven.xml $JENKINS_HOME/
+# add default maven config
 ADD mvnsettings.xml /root/.m2/settings.xml
 
-# TODO add configuration...
-#ADD config.xml $JENKINS_HOME/
-#ADD fabric8-jenkins-IT-config.xml $JENKINS_HOME/jobs/fabric8-jenkins-IT/config.xml
-#ADD fabric8-console-IT-config.xml $JENKINS_HOME/jobs/fabric8-console-IT/config.xml
-#ADD fabric8-cadvisor-IT-config.xml $JENKINS_HOME/jobs/fabric8-cadvisor-IT/config.xml
+# lets configure and add default jobs
+ADD jenkins/*.xml $JENKINS_HOME/
+ADD jenkins/jobs $JENKINS_HOME/jobs
 
 USER root
 RUN chown -R jenkins:jenkins /root/.m2/settings.xml /var/jenkins_home
