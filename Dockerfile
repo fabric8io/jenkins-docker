@@ -16,7 +16,7 @@ COPY jenkins/*.xml $JENKINS_HOME/
 COPY jenkins/jobs $JENKINS_HOME/jobs
 
 # configure maven settings and nexus mirroring and authentication
-ADD mvnsettings.xml /root/.m2/settings.xml
+ADD mvnsettings.xml $JENKINS_HOME/.m2/settings.xml
 
 RUN chown -R jenkins:jenkins $JENKINS_HOME/
 
