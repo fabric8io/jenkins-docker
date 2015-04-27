@@ -13,10 +13,12 @@ RUN wget -q https://storage.googleapis.com/golang/go1.4.linux-amd64.tar.gz && \
     tar -C /usr/local -xzf go1.4.linux-amd64.tar.gz
 
 # Maven
-RUN wget -q http://mirrors.ukfast.co.uk/sites/ftp.apache.org/maven/maven-3/3.2.5/binaries/apache-maven-3.2.5-bin.tar.gz && \
-	tar -C /opt -zxvf apache-maven-3.2.5-bin.tar.gz
+ENV MAVEN_VERSION 3.3.1
 
-RUN rm -rf apache-maven-3.2.5-bin.tar.gz && \
+RUN wget -q http://mirrors.ukfast.co.uk/sites/ftp.apache.org/maven/maven-3/${MAVEN_VERSION}/binaries/apache-maven-${MAVEN_VERSION}-bin.tar.gz && \
+	tar -C /opt -zxvf apache-maven-${MAVEN_VERSION}-bin.tar.gz
+
+RUN rm -rf apache-maven-${MAVEN_VERSION}-bin.tar.gz && \
 	rm -rf go1.4.linux-amd64.tar.gz
 
 RUN mkdir -p /var/jenkins_home/.m2 && \
@@ -42,7 +44,7 @@ ENV GOROOT /usr/local/go
 ENV GOPATH /go
 ENV PATH $PATH:$GOPATH/bin
 
-ENV M2_HOME /opt/apache-maven-3.2.5
+ENV M2_HOME /opt/apache-maven-${MAVEN_VERSION}
 ENV M2 $M2_HOME/bin
 ENV PATH $M2:$PATH
 
@@ -51,38 +53,50 @@ ENV JAVA_HOME /usr/java/latest
 RUN go get github.com/tools/godep && \
 	cd $GOPATH/src/github.com/tools/godep && go install
 
-# https://wiki.jenkins-ci.org/display/JENKINS/Workflow+Plugin
-ADD http://updates.jenkins-ci.org/latest/workflow-aggregator.hpi $JENKINS_HOME/plugins/
-ADD http://updates.jenkins-ci.org/latest/workflow-durable-task-step.hpi $JENKINS_HOME/plugins/
-ADD http://updates.jenkins-ci.org/latest/workflow-cps-global-lib.hpi $JENKINS_HOME/plugins/
-ADD http://updates.jenkins-ci.org/latest/workflow-support.hpi $JENKINS_HOME/plugins/
-ADD http://updates.jenkins-ci.org/latest/workflow-job.hpi $JENKINS_HOME/plugins/
-ADD http://updates.jenkins-ci.org/latest/workflow-basic-steps.hpi $JENKINS_HOME/plugins/
-ADD http://updates.jenkins-ci.org/latest/workflow-cps.hpi $JENKINS_HOME/plugins/
-ADD http://updates.jenkins-ci.org/latest/workflow-step-api.hpi $JENKINS_HOME/plugins/
-ADD http://updates.jenkins-ci.org/latest/workflow-scm-step.hpi $JENKINS_HOME/plugins/
-ADD http://updates.jenkins-ci.org/latest/workflow-api.hpi $JENKINS_HOME/plugins/
-ADD http://updates.jenkins-ci.org/latest/git-server.hpi $JENKINS_HOME/plugins/
-ADD http://updates.jenkins-ci.org/latest/durable-task.hpi $JENKINS_HOME/plugins/
-ADD http://updates.jenkins-ci.org/latest/workflow-support.hpi $JENKINS_HOME/plugins/
-ADD http://updates.jenkins-ci.org/latest/script-security.hpi $JENKINS_HOME/plugins/
-
+# the following are required for the jenkins Pipeline DSL:https://github.com/fabric8io/jenkins-pipeline-dsl/blob/master/README.md#required-jenkins-plugins
+ADD http://updates.jenkins-ci.org/latest/build-pipeline-plugin.hpi $JENKINS_HOME/plugins/
+ADD http://updates.jenkins-ci.org/latest/build-timeout.hpi $JENKINS_HOME/plugins/
+ADD http://updates.jenkins-ci.org/latest/copyartifact.hpi $JENKINS_HOME/plugins/
+ADD http://updates.jenkins-ci.org/latest/delivery-pipeline-plugin.hpi $JENKINS_HOME/plugins/
+ADD http://updates.jenkins-ci.org/latest/envinject.hpi $JENKINS_HOME/plugins/
 ADD http://updates.jenkins-ci.org/latest/ghprb.hpi $JENKINS_HOME/plugins/
-ADD http://updates.jenkins-ci.org/latest/ssh-credentials.hpi $JENKINS_HOME/plugins/
 ADD http://updates.jenkins-ci.org/latest/git-client.hpi $JENKINS_HOME/plugins/
-ADD http://updates.jenkins-ci.org/latest/scm-api.hpi $JENKINS_HOME/plugins/
-ADD http://updates.jenkins-ci.org/latest/credentials.hpi $JENKINS_HOME/plugins/
-ADD http://updates.jenkins-ci.org/latest/commit-message-trigger-plugin.hpi $JENKINS_HOME/plugins/
-ADD http://updates.jenkins-ci.org/latest/ruby-runtime.hpi $JENKINS_HOME/plugins/
 ADD http://updates.jenkins-ci.org/latest/git.hpi $JENKINS_HOME/plugins/
-ADD http://updates.jenkins-ci.org/latest/ssh-agent.hpi $JENKINS_HOME/plugins/
 ADD http://updates.jenkins-ci.org/latest/github-api.hpi $JENKINS_HOME/plugins/
 ADD http://updates.jenkins-ci.org/latest/github.hpi $JENKINS_HOME/plugins/
-ADD http://updates.jenkins-ci.org/latest/ircbot.hpi $JENKINS_HOME/plugins/
+ADD http://updates.jenkins-ci.org/latest/golang.hpi $JENKINS_HOME/plugins/
+ADD http://updates.jenkins-ci.org/latest/groovy-postbuild.hpi $JENKINS_HOME/plugins/
 ADD http://updates.jenkins-ci.org/latest/instant-messaging.hpi $JENKINS_HOME/plugins/
-
+ADD http://updates.jenkins-ci.org/latest/ircbot.hpi $JENKINS_HOME/plugins/
+ADD http://updates.jenkins-ci.org/latest/jobConfigHistory.hpi $JENKINS_HOME/plugins/
 ADD http://updates.jenkins-ci.org/latest/job-dsl.hpi $JENKINS_HOME/plugins/
 ADD http://updates.jenkins-ci.org/latest/kubernetes.hpi $JENKINS_HOME/plugins/
+ADD http://updates.jenkins-ci.org/latest/parameterized-trigger.hpi $JENKINS_HOME/plugins/
+ADD http://updates.jenkins-ci.org/latest/promoted-builds.hpi $JENKINS_HOME/plugins/
+ADD http://updates.jenkins-ci.org/latest/scm-api.hpi $JENKINS_HOME/plugins/
+ADD http://updates.jenkins-ci.org/latest/timestamper.hpi $JENKINS_HOME/plugins/
+
+
+# TODO are these still required?
+ADD http://updates.jenkins-ci.org/latest/commit-message-trigger-plugin.hpi $JENKINS_HOME/plugins/
+ADD http://updates.jenkins-ci.org/latest/credentials.hpi $JENKINS_HOME/plugins/
+ADD http://updates.jenkins-ci.org/latest/durable-task.hpi $JENKINS_HOME/plugins/
+ADD http://updates.jenkins-ci.org/latest/git-server.hpi $JENKINS_HOME/plugins/
+ADD http://updates.jenkins-ci.org/latest/ruby-runtime.hpi $JENKINS_HOME/plugins/
+ADD http://updates.jenkins-ci.org/latest/script-security.hpi $JENKINS_HOME/plugins/
+ADD http://updates.jenkins-ci.org/latest/ssh-agent.hpi $JENKINS_HOME/plugins/
+ADD http://updates.jenkins-ci.org/latest/ssh-credentials.hpi $JENKINS_HOME/plugins/
+ADD http://updates.jenkins-ci.org/latest/workflow-aggregator.hpi $JENKINS_HOME/plugins/
+ADD http://updates.jenkins-ci.org/latest/workflow-api.hpi $JENKINS_HOME/plugins/
+ADD http://updates.jenkins-ci.org/latest/workflow-basic-steps.hpi $JENKINS_HOME/plugins/
+ADD http://updates.jenkins-ci.org/latest/workflow-cps-global-lib.hpi $JENKINS_HOME/plugins/
+ADD http://updates.jenkins-ci.org/latest/workflow-cps.hpi $JENKINS_HOME/plugins/
+ADD http://updates.jenkins-ci.org/latest/workflow-durable-task-step.hpi $JENKINS_HOME/plugins/
+ADD http://updates.jenkins-ci.org/latest/workflow-job.hpi $JENKINS_HOME/plugins/
+ADD http://updates.jenkins-ci.org/latest/workflow-scm-step.hpi $JENKINS_HOME/plugins/
+ADD http://updates.jenkins-ci.org/latest/workflow-step-api.hpi $JENKINS_HOME/plugins/
+ADD http://updates.jenkins-ci.org/latest/workflow-support.hpi $JENKINS_HOME/plugins/
+ADD http://updates.jenkins-ci.org/latest/workflow-support.hpi $JENKINS_HOME/plugins/
 
 
 # lets configure Maven
