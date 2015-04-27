@@ -81,6 +81,9 @@ ADD http://updates.jenkins-ci.org/latest/github.hpi $JENKINS_HOME/plugins/
 ADD http://updates.jenkins-ci.org/latest/ircbot.hpi $JENKINS_HOME/plugins/
 ADD http://updates.jenkins-ci.org/latest/instant-messaging.hpi $JENKINS_HOME/plugins/
 
+ADD http://updates.jenkins-ci.org/latest/job-dsl.hpi $JENKINS_HOME/plugins/
+ADD http://updates.jenkins-ci.org/latest/kubernetes.hpi $JENKINS_HOME/plugins/
+
 
 # lets configure Maven
 ADD hudson.tasks.Maven.xml $JENKINS_HOME/
