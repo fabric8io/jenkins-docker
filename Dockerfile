@@ -77,6 +77,14 @@ ADD http://updates.jenkins-ci.org/latest/scm-api.hpi $JENKINS_HOME/plugins/
 ADD http://updates.jenkins-ci.org/latest/timestamper.hpi $JENKINS_HOME/plugins/
 
 
+# extra dependencies required
+ADD http://updates.jenkins-ci.org/latest/build-timeout.hpi $JENKINS_HOME/plugins/
+ADD http://updates.jenkins-ci.org/latest/dockerhub.hpi $JENKINS_HOME/plugins/
+ADD http://updates.jenkins-ci.org/latest/docker-build-publish.hpi $JENKINS_HOME/plugins/
+ADD http://updates.jenkins-ci.org/latest/docker-plugin.hpi $JENKINS_HOME/plugins/
+ADD http://updates.jenkins-ci.org/latest/jquery.hpi $JENKINS_HOME/plugins/
+ADD http://updates.jenkins-ci.org/latest/token-macro.hpi $JENKINS_HOME/plugins/
+A
 # TODO are these still required?
 ADD http://updates.jenkins-ci.org/latest/commit-message-trigger-plugin.hpi $JENKINS_HOME/plugins/
 ADD http://updates.jenkins-ci.org/latest/credentials.hpi $JENKINS_HOME/plugins/
