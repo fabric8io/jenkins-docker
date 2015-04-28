@@ -26,12 +26,8 @@
     <profile>
       <id>nexus</id>
       <properties>
-        <!--
-        <altDeploymentRepository>local-nexus::default::http://${env.NEXUS_SERVICE_HOST}:${env.NEXUS_SERVICE_PORT}/service/local/staging/deploy/maven2</altDeploymentRepository>
-        <altReleaseDeploymentRepository>local-nexus::default::http://${env.NEXUS_SERVICE_HOST}:${env.NEXUS_SERVICE_PORT}/service/local/staging/deploy/maven2</altReleaseDeploymentRepository>
-      -->
-        <altDeploymentRepository>local-nexus::default::http://${env.NEXUS_SERVICE_HOST}:${env.NEXUS_SERVICE_PORT}/content/repositories/releases/</altDeploymentRepository>
-        <altReleaseDeploymentRepository>local-nexus::default::http://${env.NEXUS_SERVICE_HOST}:${env.NEXUS_SERVICE_PORT}/content/repositories/releases/</altReleaseDeploymentRepository>
+        <altDeploymentRepository>local-nexus::default::http://${env.NEXUS_SERVICE_HOST}:${env.NEXUS_SERVICE_PORT}/content/repositories/staging/</altDeploymentRepository>
+        <altReleaseDeploymentRepository>local-nexus::default::http://${env.NEXUS_SERVICE_HOST}:${env.NEXUS_SERVICE_PORT}/content/repositories/staging/</altReleaseDeploymentRepository>
         <altSnapshotDeploymentRepository>local-nexus::default::http://${env.NEXUS_SERVICE_HOST}:${env.NEXUS_SERVICE_PORT}/content/repositories/snapshots/</altSnapshotDeploymentRepository>
 
       </properties>
