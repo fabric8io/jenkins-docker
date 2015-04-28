@@ -21,3 +21,6 @@ ADD mvnsettings.xml $JENKINS_HOME/.m2/settings.xml
 RUN chown -R jenkins:jenkins $JENKINS_HOME/
 
 USER jenkins
+
+ENV NEXUS_USERNAME admin
+ENV NEXUS_PASSWORD admin123
