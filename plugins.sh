@@ -16,5 +16,6 @@ while read spec; do
     [[ ${plugin[0]} =~ ^# ]] && continue
     [[ ${plugin[0]} =~ ^\s*$ ]] && continue
     echo "Installing ${plugin[0]}:${plugin[1]}"
-    curl -f --retry 5 -sSL ${JENKINS_UC}/download/plugins/${plugin[0]}/${plugin[1]}/${plugin[0]}.hpi -o $REF/${plugin[0]}.hpi;
+    curl -f --retry 5 -sSL ${JENKINS_UC}/download/plugins/${plugin[0]}/${plugin[1]}/${plugin[0]}.hpi -o $REF/${plugin[0]}.hpi
+    touch $REF/${plugin[0]}.hpi.pinned
 done  < $1
