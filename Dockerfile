@@ -17,11 +17,16 @@ COPY jenkins/*.xml $JENKINS_HOME/
 COPY jenkins/jobs $JENKINS_HOME/jobs
 
 # configure maven settings and nexus mirroring and authentication
-ADD mvnsettings.xml $JENKINS_HOME/.m2/settings.xml
+COPY mvnsettings.xml $JENKINS_HOME/.m2/settings.xml
+COPY jenkins.sh /usr/local/bin/jenkins.sh
 
-RUN chown -R jenkins:jenkins $JENKINS_HOME/
+RUN chown -R jenkins:jenkins $JENKINS_HOME/ /usr/local/bin/jenkins.sh
 
-USER jenkins
+# TODO for socat we need to run as root unfortunately
+#USER jenkins
 
 ENV NEXUS_USERNAME admin
 ENV NEXUS_PASSWORD admin123
+
+ENV DOCKER_HOST http://localhost:2376
+
