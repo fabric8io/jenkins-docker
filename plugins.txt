@@ -32,6 +32,7 @@ junit:1.5
 ldap:1.11
 mailer:1.15
 mapdb-api:1.0.6.0
+mask-passwords:2.7.2
 matrix-auth:1.2
 matrix-project:1.4
 maven-deployment-linker:1.5.1
