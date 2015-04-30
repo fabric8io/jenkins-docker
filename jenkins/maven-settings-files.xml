@@ -20,9 +20,9 @@
 
   &lt;servers&gt;
     &lt;server&gt;
-      &lt;id&gt;local-nexus&lt;/id&gt;
-      &lt;username&gt;${env.NEXUS_USERNAME}&lt;/username&gt;
-      &lt;password&gt;${env.NEXUS_PASSWORD}&lt;/password&gt;
+      &lt;id&gt;docker-registry&lt;/id&gt;
+      &lt;username&gt;${env.DOCKER_REGISTRY_USERNAME}&lt;/username&gt;
+      &lt;password&gt;${env.DOCKER_REGISTRY_PASSWORD}&lt;/password&gt;
     &lt;/server&gt;
   &lt;/servers&gt;
 &lt;/settings&gt;</content>
