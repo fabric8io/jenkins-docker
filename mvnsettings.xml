@@ -19,6 +19,11 @@
     <username>${env.NEXUS_USERNAME}</username>
     <password>${env.NEXUS_PASSWORD}</password>
   </server>
+  <server>
+    <id>docker-registry</id>
+    <username>${env.DOCKER_REGISTRY_USERNAME}</username>
+    <password>${env.DOCKER_REGISTRY_PASSWORD}</password>
+  </server>
 </servers>
 
 

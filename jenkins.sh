@@ -1,7 +1,7 @@
 #! /bin/bash
 
 # lets startup socat so we can access the docker socket over http from Java code
-socat tcp-listen:2376,fork unix:/var/run/docker.sock &
+socat tcp-listen:2375,fork unix:/var/run/docker.sock &
 
 # if `docker run` first argument start with `--` the user is passing jenkins launcher arguments
 if [[ $# -lt 1 ]] || [[ "$1" == "--"* ]]; then
