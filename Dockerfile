@@ -28,5 +28,5 @@ RUN chown -R jenkins:jenkins $JENKINS_HOME/ /usr/local/bin/jenkins.sh
 ENV NEXUS_USERNAME admin
 ENV NEXUS_PASSWORD admin123
 
-ENV DOCKER_HOST http://localhost:2376
+ENV DOCKER_HOST tcp://localhost:2376
 
