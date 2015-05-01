@@ -32,4 +32,5 @@ ENV NEXUS_USERNAME admin
 ENV NEXUS_PASSWORD admin123
 
 ENV DOCKER_HOST tcp://localhost:2375
+ENV SEED_GIT_URL https://github.com/fabric8io/default-jenkins-dsl.git
 
