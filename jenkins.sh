@@ -1,5 +1,12 @@
 #! /bin/bash
 
+# lets define some env vars for easier kubernetes integration
+export KUBERNETES_MASTER=https://${KUBERNETES_SERVICE_HOST}:${KUBERNETES_SERVICE_PORT}
+export KUBERNETES_TRUST_CERT=true
+export SKIP_TLS_VERIFY=true
+export KUBERNETES_NAMESPACE=default
+export BUILD_NAMESPACE=default
+
 # lets startup socat so we can access the docker socket over http from Java code
 socat tcp-listen:2375,fork unix:/var/run/docker.sock &
 
