@@ -55,6 +55,7 @@ support-core:2.21
 timestamper:1.6
 token-macro:1.10
 translation:1.12
+warnings:4.47
 windows-slaves:1.0
 workflow-step-api:1.5
 ws-cleanup:0.25
