@@ -39,6 +39,7 @@ matrix-project:1.4
 maven-deployment-linker:1.5.1
 maven-plugin:2.9
 metrics:3.0.10
+naginator:1.15
 pam-auth:1.2
 parameterized-trigger:2.26
 plain-credentials:1.1
