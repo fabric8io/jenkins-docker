@@ -1,12 +1,17 @@
-<?xml version='1.0' encoding='UTF-8'?>
 <project>
   <actions/>
   <description>generates the jobs using the Jobs DSL</description>
   <keepDependencies>false</keepDependencies>
   <properties>
+    <com.sonyericsson.jenkins.plugins.bfa.model.ScannerJobProperty plugin="build-failure-analyzer@1.13.0">
+      <doNotScan>false</doNotScan>
+    </com.sonyericsson.jenkins.plugins.bfa.model.ScannerJobProperty>
     <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.11.3">
       <projectUrl>https://github.com/fabric8io/jenkins-pipeline-dsl/</projectUrl>
     </com.coravy.hudson.plugins.github.GithubProjectProperty>
+    <com.chikli.hudson.plugin.naginator.NaginatorOptOutProperty plugin="naginator@1.15">
+      <optOut>false</optOut>
+    </com.chikli.hudson.plugin.naginator.NaginatorOptOutProperty>
   </properties>
   <scm class="hudson.plugins.git.GitSCM" plugin="git@2.3.5">
     <configVersion>2</configVersion>
@@ -36,6 +41,18 @@
   </triggers>
   <concurrentBuild>false</concurrentBuild>
   <builders>
+    <hudson.plugins.gradle.Gradle plugin="gradle@1.24">
+      <description></description>
+      <switches></switches>
+      <tasks></tasks>
+      <rootBuildScriptDir></rootBuildScriptDir>
+      <buildFile>preBuild.gradle</buildFile>
+      <gradleName>2.4-rc-2</gradleName>
+      <useWrapper>false</useWrapper>
+      <makeExecutable>false</makeExecutable>
+      <fromRootBuildScriptDir>true</fromRootBuildScriptDir>
+      <useWorkspaceAsHome>false</useWorkspaceAsHome>
+    </hudson.plugins.gradle.Gradle>
     <javaposse.jobdsl.plugin.ExecuteDslScripts plugin="job-dsl@1.32">
       <targets>**/*.groovy</targets>
       <usingScriptText>false</usingScriptText>
@@ -43,7 +60,7 @@
       <removedJobAction>DISABLE</removedJobAction>
       <removedViewAction>DELETE</removedViewAction>
       <lookupStrategy>JENKINS_ROOT</lookupStrategy>
-      <additionalClasspath></additionalClasspath>
+      <additionalClasspath>lib/*.jar</additionalClasspath>
     </javaposse.jobdsl.plugin.ExecuteDslScripts>
   </builders>
   <publishers>
