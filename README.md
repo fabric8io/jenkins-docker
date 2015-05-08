@@ -21,6 +21,8 @@ docker run -it -p 8080:8080 --name jenkins -e SEED_GIT_URL=https://github.com/fa
 
 Where `dockerhost` is the host running nexus. You may wish to [run nexus using these instructions](https://github.com/fabric8io/nexus-docker#running-this-container)
 
+If `dockerhost` is the host running docker then you can view the running Jenkins at http://dockerhost:8080/
+
 Environment variables
 ---------------------
 
