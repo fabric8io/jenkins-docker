@@ -17,6 +17,7 @@ embeddable-build-status:1.7
 envinject:1.91.2
 extended-choice-parameter:0.37
 external-monitor-job:1.4
+fstrigger:0.39
 gradle:1.24
 ghprb:1.19
 git:2.3.5
