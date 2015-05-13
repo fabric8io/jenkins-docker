@@ -8,6 +8,9 @@
     </mirror>
   </mirrors>
 
+  <!-- lets disable the download progress indicator that fills up logs -->
+  <interactiveMode>false</interactiveMode>
+
 <servers>
   <server>
     <id>local-nexus</id>
