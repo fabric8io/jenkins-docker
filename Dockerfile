@@ -5,7 +5,7 @@ MAINTAINER fabric8.io (http://fabric8.io/)
 USER root
 
 RUN yum remove -y java-1.7.0-openjdk* && \
-    yum install -y bzr mercurial java-1.8.0-openjdk-devel gcc
+    yum install -y bzr mercurial java-1.8.0-openjdk-devel
 
 ENV JENKINS_UC https://updates.jenkins-ci.org
 COPY plugins.sh /plugins.sh
@@ -30,6 +30,9 @@ RUN chown -R jenkins:jenkins $JENKINS_HOME/ /usr/local/bin/jenkins.sh
 
 ENV NEXUS_USERNAME admin
 ENV NEXUS_PASSWORD admin123
+
+# disable GCC requirement by default
+ENV CGO_ENABLED 0
 
 ENV DOCKER_HOST tcp://localhost:2375
 ENV SEED_GIT_URL https://github.com/fabric8io/default-jenkins-dsl.git
