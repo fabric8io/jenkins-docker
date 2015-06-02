@@ -43,11 +43,13 @@ maven-deployment-linker:1.5.1
 maven-plugin:2.9
 metrics:3.0.10
 naginator:1.15
+notification:1.9
 pam-auth:1.2
 parameterized-trigger:2.26
 plain-credentials:1.1
 promoted-builds:2.21
 repository:1.2
+s3:0.6
 scm-api:0.2
 script-security:1.14
 ssh-agent:1.6
