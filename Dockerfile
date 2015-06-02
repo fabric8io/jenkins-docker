@@ -5,7 +5,7 @@ MAINTAINER fabric8.io (http://fabric8.io/)
 USER root
 
 RUN yum remove -y java-1.7.0-openjdk* && \
-    yum install -y bzr mercurial java-1.8.0-openjdk-devel
+    yum install -y bzr mercurial java-1.8.0-openjdk-devel gcc
 
 ENV JENKINS_UC https://updates.jenkins-ci.org
 COPY plugins.sh /plugins.sh
@@ -39,4 +39,3 @@ ENV KUBERNETES_TRUST_CERT true
 ENV SKIP_TLS_VERIFY true
 ENV KUBERNETES_NAMESPACE default
 ENV BUILD_NAMESPACE default
-
