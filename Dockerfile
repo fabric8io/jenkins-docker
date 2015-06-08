@@ -28,8 +28,13 @@ RUN chown -R jenkins:jenkins $JENKINS_HOME/ /usr/local/bin/jenkins.sh
 # TODO for socat we need to run as root unfortunately
 #USER jenkins
 
+# these env vars should be replaced by kubernetes configuration in the OpenShift templates:
 ENV NEXUS_USERNAME admin
 ENV NEXUS_PASSWORD admin123
+
+ENV JENKINS_GOGS_USER gogsadmin
+ENV JENKINS_GOGS_PASSWORD RedHat$1
+ENV JENKINS_GOGS_EMAIL gogsadmin@fabric8.local
 
 # disable GCC requirement by default
 ENV CGO_ENABLED 0
@@ -41,4 +46,3 @@ ENV KUBERNETES_MASTER https://${KUBERNETES_SERVICE_HOST}:${KUBERNETES_SERVICE_PO
 ENV KUBERNETES_TRUST_CERT true
 ENV SKIP_TLS_VERIFY true
 ENV KUBERNETES_NAMESPACE default
-ENV BUILD_NAMESPACE default
