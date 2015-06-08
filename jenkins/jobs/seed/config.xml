@@ -1,3 +1,4 @@
+<?xml version='1.0' encoding='UTF-8'?>
 <project>
   <actions/>
   <description>generates the jobs using the Jobs DSL</description>
@@ -25,8 +26,7 @@
         <name>*/master</name>
       </hudson.plugins.git.BranchSpec>
     </branches>
-    <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
-    <submoduleCfg class="list"/>
+    <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>    <submoduleCfg class="list"/>
     <extensions/>
   </scm>
   <canRoam>true</canRoam>
@@ -41,6 +41,13 @@
   </triggers>
   <concurrentBuild>false</concurrentBuild>
   <builders>
+    <hudson.tasks.Maven>
+      <targets>-v</targets>
+      <mavenName>3.3.1</mavenName>
+      <usePrivateRepository>false</usePrivateRepository>
+      <settings class="jenkins.mvn.DefaultSettingsProvider"/>
+      <globalSettings class="jenkins.mvn.DefaultGlobalSettingsProvider"/>
+    </hudson.tasks.Maven>
     <hudson.plugins.gradle.Gradle plugin="gradle@1.24">
       <description></description>
       <switches></switches>
