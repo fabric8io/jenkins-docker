@@ -1,16 +1,15 @@
-FROM openshift/jenkins-1-centos
+FROM jenkins
 MAINTAINER fabric8.io (http://fabric8.io/)
 
 # Install package dependencies as root
 USER root
 
-RUN yum remove -y java-1.7.0-openjdk* && \
-    yum install -y bzr mercurial java-1.8.0-openjdk-devel
+RUN apt-get update -y && apt-get install -y socat bzr
 
 ENV JENKINS_UC https://updates.jenkins-ci.org
-COPY plugins.sh /plugins.sh
-COPY plugins.txt /plugins.txt
-RUN /plugins.sh /plugins.txt
+COPY plugins.txt /usr/share/jenkins/ref/
+COPY plugins.sh /usr/local/bin/plugins.sh
+RUN /usr/local/bin/plugins.sh /usr/share/jenkins/ref/plugins.txt
 
 # lets configure and add default jobs
 COPY jenkins/*.xml $JENKINS_HOME/

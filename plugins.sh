@@ -8,14 +8,18 @@
 # RUN /usr/local/bin/plugins.sh /plugins.txt
 # 
 
-REF=$JENKINS_HOME/plugins/
+REF=/usr/share/jenkins/ref/plugins
 mkdir -p $REF
 
-while read spec; do
+while read spec || [ -n "$spec" ]; do
     plugin=(${spec//:/ }); 
     [[ ${plugin[0]} =~ ^# ]] && continue
     [[ ${plugin[0]} =~ ^\s*$ ]] && continue
-    echo "Installing ${plugin[0]}:${plugin[1]}"
-    curl -f --retry 5 -sSL ${JENKINS_UC}/download/plugins/${plugin[0]}/${plugin[1]}/${plugin[0]}.hpi -o $REF/${plugin[0]}.hpi
+    echo "Downloading ${plugin[0]}:${plugin[1]}"
+
+    if [ -z "$JENKINS_UC_DOWNLOAD" ]; then
+      JENKINS_UC_DOWNLOAD=$JENKINS_UC/download
+    fi
+    wget ${JENKINS_UC}/download/plugins/${plugin[0]}/${plugin[1]}/${plugin[0]}.hpi -O $REF/${plugin[0]}.hpi
     touch $REF/${plugin[0]}.hpi.pinned
 done  < $1
