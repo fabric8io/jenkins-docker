@@ -20,6 +20,7 @@ COPY mvnsettings.xml $JENKINS_HOME/.m2/settings.xml
 
 # lets put a copy in the roots folder too for when running as root
 COPY mvnsettings.xml /root/.m2/settings.xml
+COPY get-host-ip.sh /usr/local/bin/get-host-ip.sh
 COPY jenkins.sh /usr/local/bin/jenkins.sh
 
 RUN chown -R jenkins:jenkins $JENKINS_HOME/ /usr/local/bin/jenkins.sh

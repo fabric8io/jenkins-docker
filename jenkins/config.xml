@@ -51,7 +51,7 @@
      <numExecutors>1</numExecutors>
     </com.nirima.jenkins.plugins.docker.DockerTemplate>
    </templates>
-   <serverUrl>http://localhost:2375</serverUrl>
+   <serverUrl>http://docker.url:2375</serverUrl>
    <containerCap>2147483647</containerCap>
    <connectTimeout>5</connectTimeout>
    <readTimeout>15</readTimeout>
