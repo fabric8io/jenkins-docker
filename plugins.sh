@@ -20,6 +20,7 @@ while read spec || [ -n "$spec" ]; do
     if [ -z "$JENKINS_UC_DOWNLOAD" ]; then
       JENKINS_UC_DOWNLOAD=$JENKINS_UC/download
     fi
-    wget ${JENKINS_UC}/download/plugins/${plugin[0]}/${plugin[1]}/${plugin[0]}.hpi -O $REF/${plugin[0]}.hpi
+
+    curl -f --retry 5 --connect-timeout 60 --max-time 240 -SL --progress-bar ${JENKINS_UC}/download/plugins/${plugin[0]}/${plugin[1]}/${plugin[0]}.hpi -o $REF/${plugin[0]}.hpi
     touch $REF/${plugin[0]}.hpi.pinned
 done  < $1
