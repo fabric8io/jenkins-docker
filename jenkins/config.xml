@@ -24,7 +24,9 @@
      <lxcConfString></lxcConfString>
      <hostname></hostname>
      <dnsHosts/>
-     <volumes/>
+     <volumes>
+       <string>/home/jenkins/ssh-keys:/home/jenkins/ssh-keys</string>
+     </volumes>
      <volumesFrom2/>
      <environment/>
      <bindPorts></bindPorts>
@@ -32,7 +34,7 @@
      <privileged>true</privileged>
      <tty>false</tty>
      <labelString>docker</labelString>
-     <credentialsId></credentialsId>
+     <credentialsId>jenkins-slave-ssh-key</credentialsId>
      <idleTerminationMinutes>5</idleTerminationMinutes>
      <sshLaunchTimeoutMinutes>1</sshLaunchTimeoutMinutes>
      <jvmOptions></jvmOptions>

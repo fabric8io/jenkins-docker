@@ -38,6 +38,12 @@ find /usr/share/jenkins/ref/ -type f -exec bash -c 'copy_reference_file {}' \;
 DOCKER_HOST=`get-host-ip.sh`
 sed -ie 's/docker.url/'"$DOCKER_HOST"'/g' /var/jenkins_home/config.xml
 
+# Generate ssh key
+ssh-keygen -q -t rsa -N '' -f ~/.ssh/id_rsa
+mkdir -p /home/jenkins/ssh-keys/
+cp ~/.ssh/id_rsa.pub /home/jenkins/ssh-keys/authorized_keys
+chmod -R 775 /home/jenkins/ssh-keys/authorized_keys
+
 # if `docker run` first argument start with `--` the user is passing jenkins launcher arguments
 if [[ $# -lt 1 ]] || [[ "$1" == "--"* ]]; then
    exec java $JAVA_OPTS -jar /usr/share/jenkins/jenkins.war $JENKINS_OPTS "$@"
