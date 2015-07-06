@@ -61,7 +61,7 @@ run-condition:1.0
 s3:0.6
 scm-api:0.2
 script-security:1.14
-ssh-agent:1.6
+ssh-agent:1.7
 ssh-credentials:1.11
 ssh-slaves:1.9
 subversion:2.5

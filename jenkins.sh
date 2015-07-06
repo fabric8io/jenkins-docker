@@ -34,7 +34,6 @@ echo "--- Copying files at $(date)" >> $COPY_REFERENCE_FILE_LOG
 find /usr/share/jenkins/ref/ -type f -exec bash -c 'copy_reference_file {}' \;
 
 #Set the serverUrl for the docker-plugins
-#sed -ie 's/docker.url/'"${HOSTNAME}"'/g' /var/jenkins_home/config.xml
 DOCKER_HOST=`get-host-ip.sh`
 sed -ie 's/docker.url/'"$DOCKER_HOST"'/g' /var/jenkins_home/config.xml
 
@@ -43,6 +42,25 @@ ssh-keygen -q -t rsa -N '' -f ~/.ssh/id_rsa
 mkdir -p /home/jenkins/ssh-keys/
 cp ~/.ssh/id_rsa.pub /home/jenkins/ssh-keys/authorized_keys
 chmod -R 775 /home/jenkins/ssh-keys/authorized_keys
+
+#Generate master.key and secret
+MAGIC="::::MAGIC::::"
+mkdir -p /var/jenkins_home/secrets
+openssl rand -hex 128 > /var/jenkins_home/secrets/master.key
+openssl dgst -sha256 -binary /var/jenkins_home/secrets/master.key > /tmp/master.hashed
+HEX_MASTER_KEY=`head -c 16 /tmp/master.hashed | xxd -l 16 -p`
+openssl rand 259 > /tmp/base
+echo $MAGIC >> /tmp/base
+openssl enc -aes-128-ecb -in /tmp/base -K $HEX_MASTER_KEY -out /var/jenkins_home/secrets/hudson.util.Secret
+
+chmod -R 700 /var/jenkins_home/secrets
+chmod 444 /var/jenkins_home/secrets/master.key
+chmod 444 /var/jenkins_home/secrets/hudson.util.Secret
+
+ENCRYPTED_PASSPHRASE=`jenkins-encrypt.py`
+ENCRYPTED_PASSWORD=`jenkins-encrypt.py jenkins`
+sed -ie 's|encrypted.passphrase|'"$ENCRYPTED_PASSPHRASE"'|g' /var/jenkins_home/credentials.xml
+sed -ie 's|encrypted.password|'"$ENCRYPTED_PASSWORD"'|g' /var/jenkins_home/credentials.xml
 
 # if `docker run` first argument start with `--` the user is passing jenkins launcher arguments
 if [[ $# -lt 1 ]] || [[ "$1" == "--"* ]]; then

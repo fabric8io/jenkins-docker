@@ -25,6 +25,11 @@ COPY jenkins.sh /usr/local/bin/jenkins.sh
 
 RUN chown -R jenkins:jenkins $JENKINS_HOME/ /usr/local/bin/jenkins.sh
 
+#Install some additional python libraries to handle jenkins encrypt decrypt.
+RUN apt-get install -y python-dev python-pip vim-common
+RUN pip install pycrypto
+COPY jenkins-encrypt.py /usr/local/bin/jenkins-encrypt.py
+
 # TODO for socat we need to run as root unfortunately
 #USER jenkins
 
