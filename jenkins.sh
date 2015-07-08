@@ -29,20 +29,32 @@ copy_reference_file() {
   fi;
 }
 
+valueOf() {
+ eval echo \${$1}
+}
+
 export -f copy_reference_file
 echo "--- Copying files at $(date)" >> $COPY_REFERENCE_FILE_LOG
 find /usr/share/jenkins/ref/ -type f -exec bash -c 'copy_reference_file {}' \;
 
 #Set the serverUrl for the docker-plugins
 DOCKER_HOST=`get-host-ip.sh`
-sed -ie 's/docker.url/'"$DOCKER_HOST"'/g' /var/jenkins_home/config.xml
+sed -ie 's|docker.url|'"$DOCKER_HOST"'|g' /var/jenkins_home/config.xml
+
+#Set Environment Variables
+for jobDir in /var/jenkins_home/jobs/*; do
+  JOB_CONF=${jobDir}/config.xml
+  for envVar in `cat ${JOB_CONF} | grep {| awk -F "{" '{print $2}' | awk -F "}" '{print $1}'`; do
+    SUBST=`valueOf ${envVar}`
+    sed -ie 's|${'"$envVar"'}|'"$SUBST"'|g' $JOB_CONF
+  done
+done
 
 # Generate ssh key
 ssh-keygen -q -t rsa -N '' -f ~/.ssh/id_rsa
 mkdir -p /home/jenkins/ssh-keys/
 cp ~/.ssh/id_rsa.pub /home/jenkins/ssh-keys/authorized_keys
 chmod -R 775 /home/jenkins/ssh-keys/authorized_keys
-
 #Generate master.key and secret
 MAGIC="::::MAGIC::::"
 mkdir -p /var/jenkins_home/secrets
