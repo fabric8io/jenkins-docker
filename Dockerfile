@@ -1,16 +1,15 @@
-FROM openshift/jenkins-1-centos
+FROM jenkins
 MAINTAINER fabric8.io (http://fabric8.io/)
 
 # Install package dependencies as root
 USER root
 
-RUN yum remove -y java-1.7.0-openjdk* && \
-    yum install -y bzr mercurial java-1.8.0-openjdk-devel
+RUN apt-get update -y && apt-get install -y socat bzr
 
 ENV JENKINS_UC https://updates.jenkins-ci.org
-COPY plugins.sh /plugins.sh
-COPY plugins.txt /plugins.txt
-RUN /plugins.sh /plugins.txt
+COPY plugins.txt /usr/share/jenkins/ref/
+COPY plugins.sh /usr/local/bin/plugins.sh
+RUN /usr/local/bin/plugins.sh /usr/share/jenkins/ref/plugins.txt
 
 # lets configure and add default jobs
 COPY jenkins/*.xml $JENKINS_HOME/
@@ -21,9 +20,15 @@ COPY mvnsettings.xml $JENKINS_HOME/.m2/settings.xml
 
 # lets put a copy in the roots folder too for when running as root
 COPY mvnsettings.xml /root/.m2/settings.xml
+COPY get-host-ip.sh /usr/local/bin/get-host-ip.sh
 COPY jenkins.sh /usr/local/bin/jenkins.sh
 
 RUN chown -R jenkins:jenkins $JENKINS_HOME/ /usr/local/bin/jenkins.sh
+
+#Install some additional python libraries to handle jenkins encrypt decrypt.
+RUN apt-get install -y python-dev python-pip vim-common
+RUN pip install pycrypto
+COPY jenkins-encrypt.py /usr/local/bin/jenkins-encrypt.py
 
 # TODO for socat we need to run as root unfortunately
 #USER jenkins
