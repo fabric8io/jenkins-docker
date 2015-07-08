@@ -29,8 +29,18 @@ copy_reference_file() {
   fi;
 }
 
-valueOf() {
+value_of() {
  eval echo \${$1}
+}
+
+interpolate_env() {
+FILE=$1
+for env_var in `cat ${FILE} | grep {| awk -F "{" '{print $2}' | awk -F "}" '{print $1}'`; do
+    SUBST=`value_of ${env_var}`
+    if [ -n "$SUBST" ]; then
+      sed -ie 's|${'"$env_var"'}|'"$SUBST"'|g' $FILE
+    fi
+  done
 }
 
 export -f copy_reference_file
@@ -39,16 +49,17 @@ find /usr/share/jenkins/ref/ -type f -exec bash -c 'copy_reference_file {}' \;
 
 #Set the serverUrl for the docker-plugins
 DOCKER_HOST=`get-host-ip.sh`
+KUBERNETES_MASTER="https://${KUBERNETES_SERVICE_HOST}:${KUBERNETES_SERVICE_PORT}"
 sed -ie 's|docker.url|'"$DOCKER_HOST"'|g' /var/jenkins_home/config.xml
+sed -ie 's|kubernetes.master|'"$KUBERNETES_MASTER"'|g' /var/jenkins_home/config.xml
 
 #Set Environment Variables
 for jobDir in /var/jenkins_home/jobs/*; do
   JOB_CONF=${jobDir}/config.xml
-  for envVar in `cat ${JOB_CONF} | grep {| awk -F "{" '{print $2}' | awk -F "}" '{print $1}'`; do
-    SUBST=`valueOf ${envVar}`
-    sed -ie 's|${'"$envVar"'}|'"$SUBST"'|g' $JOB_CONF
-  done
+  interpolate_env $JOB_CONF
 done
+
+interpolate_env /var/jenkins_home/config.xml
 
 # Generate ssh key
 ssh-keygen -q -t rsa -N '' -f ~/.ssh/id_rsa

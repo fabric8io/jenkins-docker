@@ -28,7 +28,18 @@
        <string>/home/jenkins/ssh-keys:/home/jenkins/ssh-keys</string>
      </volumes>
      <volumesFrom2/>
-     <environment/>
+     <environment>
+         <string>SEED_GIT_URL=https://github.com/fabric8io/default-jenkins-dsl.git</string>
+	     <string>NEXUS_USERNAME=${NEXUS_USERNAME}</string>
+         <string>NEXUS_PASSWORD=${NEXUS_PASSWORD}</string>
+         <string>JENKINS_GOGS_USER=${JENKINS_GOGS_USER}</string>
+         <string>JENKINS_GOGS_PASSWORD=${JENKINS_GOGS_PASSWORD}</string>
+         <string>JENKINS_GOGS_EMAIL=${JENKINS_GOGS_EMAIL}</string>
+         <string>KUBERNETES_MASTER=${KUBERNETES_MASTER}</string>
+         <string>KUBERNETES_TRUST_CERT=${KUBERNETES_TRUST_CERT}</string>
+         <string>SKIP_TLS_VERIFY=${SKIP_TLS_VERIFY}</string>
+         <string>KUBERNETES_NAMESPACE=${KUBERNETES_NAMESPACE}</string>
+     </environment>
      <bindPorts></bindPorts>
      <bindAllPorts>false</bindAllPorts>
      <privileged>true</privileged>
