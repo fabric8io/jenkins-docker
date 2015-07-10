@@ -19,7 +19,7 @@
    <name>docker</name>
    <templates>
     <com.nirima.jenkins.plugins.docker.DockerTemplate>
-     <image>fabric8/jenkins-slave-dind</image>
+     <image>${JENKINS_SLAVE_IMAGE}</image>
      <dockerCommand>start-jenkins-slave.sh</dockerCommand>
      <lxcConfString></lxcConfString>
      <hostname></hostname>
@@ -30,7 +30,7 @@
      <volumesFrom2/>
      <environment>
          <string>SEED_GIT_URL=https://github.com/fabric8io/default-jenkins-dsl.git</string>
-	     <string>NEXUS_USERNAME=${NEXUS_USERNAME}</string>
+	       <string>NEXUS_USERNAME=${NEXUS_USERNAME}</string>
          <string>NEXUS_PASSWORD=${NEXUS_PASSWORD}</string>
          <string>JENKINS_GOGS_USER=${JENKINS_GOGS_USER}</string>
          <string>JENKINS_GOGS_PASSWORD=${JENKINS_GOGS_PASSWORD}</string>

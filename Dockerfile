@@ -41,6 +41,9 @@ ENV JENKINS_GOGS_USER gogsadmin
 ENV JENKINS_GOGS_PASSWORD RedHat$1
 ENV JENKINS_GOGS_EMAIL gogsadmin@fabric8.local
 
+#ENV JENKINS_SLAVE_IMAGE fabric8/jenkins-slave
+ENV JENKINS_SLAVE_IMAGE fabric8/jenkins-slave-dind
+
 # disable GCC requirement by default
 ENV CGO_ENABLED 0
 
