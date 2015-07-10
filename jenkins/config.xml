@@ -20,9 +20,7 @@
    <templates>
     <com.nirima.jenkins.plugins.docker.DockerTemplate>
      <image>${JENKINS_SLAVE_IMAGE}</image>
-<!--
      <dockerCommand>start-jenkins-slave.sh</dockerCommand>
--->
      <lxcConfString></lxcConfString>
      <hostname></hostname>
      <dnsHosts/>
