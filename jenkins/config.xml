@@ -39,6 +39,12 @@
          <string>KUBERNETES_TRUST_CERT=${KUBERNETES_TRUST_CERT}</string>
          <string>SKIP_TLS_VERIFY=${SKIP_TLS_VERIFY}</string>
          <string>KUBERNETES_NAMESPACE=${KUBERNETES_NAMESPACE}</string>
+         <string>NEXUS_SERVICE_HOST=${NEXUS_SERVICE_HOST}</string>
+         <string>NEXUS_SERVICE_PORT=${NEXUS_SERVICE_PORT}</string>
+         <string>NEXUS_USERNAME=${NEXUS_USERNAME}</string>
+         <string>NEXUS_PASSWORD=${NEXUS_PASSWORD}</string>
+         <string>DOCKER_REGISTRY_USERNAME=${DOCKER_REGISTRY_USERNAME}</string>
+         <string>DOCKER_REGISTRY_PASSWORD=${DOCKER_REGISTRY_PASSWORD}</string>
      </environment>
      <bindPorts></bindPorts>
      <bindAllPorts>false</bindAllPorts>
