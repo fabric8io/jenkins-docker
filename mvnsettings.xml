@@ -23,9 +23,14 @@
     <password>${env.NEXUS_PASSWORD}</password>
   </server>
   <server>
-    <id>docker-registry</id>
+    <id>${env.DOCKER_REGISTRY_SERVER_ID}</id>
     <username>${env.DOCKER_REGISTRY_USERNAME}</username>
     <password>${env.DOCKER_REGISTRY_PASSWORD}</password>
+  </server>
+  <server>
+    <id>oss-sonatype-staging</id>
+    <username>${env.SONATYPE_USERNAME}</username>
+    <password>${env.SONATYPE_PASSWORD}</password>
   </server>
 </servers>
 
@@ -34,7 +39,7 @@
     <profile>
       <id>nexus</id>
       <properties>
-        <altDeploymentRepository>local-nexus::default::http://${env.NEXUS_SERVICE_HOST}:${env.NEXUS_SERVICE_PORT}/content/repositories/staging/</altDeploymentRepository>
+        <altDeploymentRepository>local-nexus::default::http://${env.NEXUS_SERVICE_HOST}:${env.NEXUS_SERVICE_PORT}/content/repositories/snapshots/</altDeploymentRepository>
         <altReleaseDeploymentRepository>local-nexus::default::http://${env.NEXUS_SERVICE_HOST}:${env.NEXUS_SERVICE_PORT}/content/repositories/staging/</altReleaseDeploymentRepository>
         <altSnapshotDeploymentRepository>local-nexus::default::http://${env.NEXUS_SERVICE_HOST}:${env.NEXUS_SERVICE_PORT}/content/repositories/snapshots/</altSnapshotDeploymentRepository>
 
@@ -58,6 +63,13 @@
           <snapshots><enabled>true</enabled></snapshots>
         </pluginRepository>
       </pluginRepositories>
+    </profile>
+    <profile>
+      <id>release</id>
+      <properties>
+        <gpg.executable>gpg</gpg.executable>
+        <gpg.passphrase>${env.GPG_PASSPHRASE}</gpg.passphrase>
+      </properties>
     </profile>
   </profiles>
   <activeProfiles>
