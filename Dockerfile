@@ -16,7 +16,6 @@ COPY mvnsettings.xml /root/.m2/settings.xml
 
 # lets configure and add default jobs
 COPY jenkins/*.xml $JENKINS_HOME/
-COPY jenkins/jobs $JENKINS_HOME/jobs
 USER root
 
 RUN chown -R jenkins:jenkins $JENKINS_HOME/
