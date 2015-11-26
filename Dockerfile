@@ -16,9 +16,11 @@ COPY mvnsettings.xml /root/.m2/settings.xml
 
 # lets configure and add default jobs
 COPY jenkins/*.xml $JENKINS_HOME/
-USER root
 
+USER root
+COPY postStart.sh /root/
 RUN chown -R jenkins:jenkins $JENKINS_HOME/
+
 RUN cd /usr/local && \
   wget https://github.com/github/hub/releases/download/v2.2.1/hub-linux-amd64-2.2.1.tar.gz && \
   tar xf /usr/local/hub-linux-amd64-2.2.1.tar.gz && \

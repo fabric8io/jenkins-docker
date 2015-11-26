@@ -35,7 +35,6 @@ git-server:1.6
 github:1.14.0
 github-api:1.69
 github-oauth:0.22.2
-golang:1.1
 groovy:1.27
 groovy-postbuild:2.2.2
 jackson2-api:2.5.4

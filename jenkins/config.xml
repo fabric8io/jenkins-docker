@@ -20,7 +20,7 @@
 			<templates>
 				<org.csanchez.jenkins.plugins.kubernetes.PodTemplate>
 					<name>slave</name>
-					<image>fabric8/fabric8io/jenkins-jnlp-client</image>
+					<image>fabric8/jenkins-jnlp-client</image>
 					<privileged>true</privileged>
 					<command></command>
 					<args></args>
@@ -50,9 +50,91 @@
 						</org.csanchez.jenkins.plugins.kubernetes.PodVolumes_-SecretVolume>
 						<org.csanchez.jenkins.plugins.kubernetes.PodVolumes_-SecretVolume>
 							<mountPath>/home/jenkins/ssh-keys</mountPath>
-							<secretName>jenkins-master-key</secretName>
+							<secretName>jenkins-master-ssh</secretName>
 						</org.csanchez.jenkins.plugins.kubernetes.PodVolumes_-SecretVolume>
 					</volumes>
+					<envVars>
+						<org.csanchez.jenkins.plugins.kubernetes.PodEnvVar>
+							<key>DOMAIN</key>
+							<value>${DOMAIN}</value>
+						</org.csanchez.jenkins.plugins.kubernetes.PodEnvVar>
+						<org.csanchez.jenkins.plugins.kubernetes.PodEnvVar>
+							<key>JENKINS_WORKFLOW_GIT_REPOS</key>
+							<value>${JENKINS_WORKFLOW_GIT_REPOS}</value>
+						</org.csanchez.jenkins.plugins.kubernetes.PodEnvVar>
+						<org.csanchez.jenkins.plugins.kubernetes.PodEnvVar>
+							<key>JENKINS_WORKFLOW_GIT_REPOSITORY</key>
+							<value>${JENKINS_WORKFLOW_GIT_REPOSITORY}</value>
+						</org.csanchez.jenkins.plugins.kubernetes.PodEnvVar>
+						<org.csanchez.jenkins.plugins.kubernetes.PodEnvVar>
+							<key>SONATYPE_PASSWORD</key>
+							<value>${SONATYPE_PASSWORD}</value>
+						</org.csanchez.jenkins.plugins.kubernetes.PodEnvVar>
+						<org.csanchez.jenkins.plugins.kubernetes.PodEnvVar>
+							<key>GITHUB_TOKEN</key>
+							<value>${GITHUB_TOKEN}</value>
+						</org.csanchez.jenkins.plugins.kubernetes.PodEnvVar>
+						<org.csanchez.jenkins.plugins.kubernetes.PodEnvVar>
+							<key>DOCKER_REGISTRY_USERNAME</key>
+							<value>${DOCKER_REGISTRY_USERNAME}</value>
+						</org.csanchez.jenkins.plugins.kubernetes.PodEnvVar>
+						<org.csanchez.jenkins.plugins.kubernetes.PodEnvVar>
+							<key>JENKINS_GOGS_EMAIL</key>
+							<value>${JENKINS_GOGS_EMAIL}</value>
+						</org.csanchez.jenkins.plugins.kubernetes.PodEnvVar>
+						<org.csanchez.jenkins.plugins.kubernetes.PodEnvVar>
+							<key>DOCKER_REGISTRY_SERVER_ID</key>
+							<value>${DOCKER_REGISTRY_SERVER_ID}</value>
+						</org.csanchez.jenkins.plugins.kubernetes.PodEnvVar>
+						<org.csanchez.jenkins.plugins.kubernetes.PodEnvVar>
+							<key>DOCKER_REGISTRY_PASSWORD</key>
+							<value>${DOCKER_REGISTRY_PASSWORD}</value>
+						</org.csanchez.jenkins.plugins.kubernetes.PodEnvVar>
+						<org.csanchez.jenkins.plugins.kubernetes.PodEnvVar>
+							<key>DOCKER_REGISTRY_PREFIX</key>
+							<value>${DOCKER_REGISTRY_PREFIX}</value>
+						</org.csanchez.jenkins.plugins.kubernetes.PodEnvVar>
+						<org.csanchez.jenkins.plugins.kubernetes.PodEnvVar>
+							<key>JENKINS_JOBS_GIT_REPOSITORY</key>
+							<value>${JENKINS_JOBS_GIT_REPOSITORY}</value>
+						</org.csanchez.jenkins.plugins.kubernetes.PodEnvVar>
+						<org.csanchez.jenkins.plugins.kubernetes.PodEnvVar>
+							<key>SONATYPE_USERNAME</key>
+							<value>${SONATYPE_USERNAME}</value>
+						</org.csanchez.jenkins.plugins.kubernetes.PodEnvVar>
+						<org.csanchez.jenkins.plugins.kubernetes.PodEnvVar>
+							<key>JENKINS_GOGS_USER</key>
+							<value>${JENKINS_GOGS_USER}</value>
+						</org.csanchez.jenkins.plugins.kubernetes.PodEnvVar>
+						<org.csanchez.jenkins.plugins.kubernetes.PodEnvVar>
+							<key>JENKINS_GOGS_PASSWORD</key>
+							<value>${JENKINS_GOGS_PASSWORD}</value>
+						</org.csanchez.jenkins.plugins.kubernetes.PodEnvVar>
+						<org.csanchez.jenkins.plugins.kubernetes.PodEnvVar>
+							<key>GPG_PASSPHRASE</key>
+							<value>${GPG_PASSPHRASE}</value>
+						</org.csanchez.jenkins.plugins.kubernetes.PodEnvVar>
+						<org.csanchez.jenkins.plugins.kubernetes.PodEnvVar>
+							<key>GITHUB_AUTH_TOKEN</key>
+							<value>${GITHUB_AUTH_TOKEN}</value>
+						</org.csanchez.jenkins.plugins.kubernetes.PodEnvVar>
+						<org.csanchez.jenkins.plugins.kubernetes.PodEnvVar>
+							<key>NEXUS_USERNAME</key>
+							<value>${NEXUS_USERNAME}</value>
+						</org.csanchez.jenkins.plugins.kubernetes.PodEnvVar>
+						<org.csanchez.jenkins.plugins.kubernetes.PodEnvVar>
+							<key>NEXUS_PASSWORD</key>
+							<value>${NEXUS_PASSWORD}</value>
+						</org.csanchez.jenkins.plugins.kubernetes.PodEnvVar>
+						<org.csanchez.jenkins.plugins.kubernetes.PodEnvVar>
+							<key>KUBERNETES_TRUST_CERTIFICATES</key>
+							<value>true</value>
+						</org.csanchez.jenkins.plugins.kubernetes.PodEnvVar>
+						<org.csanchez.jenkins.plugins.kubernetes.PodEnvVar>
+							<key>KUBERNETES_NAMESPACE</key>
+							<value>${KUBERNETES_NAMESPACE}</value>
+						</org.csanchez.jenkins.plugins.kubernetes.PodEnvVar>
+					</envVars>
 				</org.csanchez.jenkins.plugins.kubernetes.PodTemplate>
 			</templates>
 			<serverUrl>https://172.28.128.4:8443</serverUrl>
