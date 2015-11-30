@@ -18,6 +18,7 @@ COPY mvnsettings.xml /root/.m2/settings.xml
 COPY jenkins/*.xml $JENKINS_HOME/
 
 USER root
+COPY start.sh /root/
 COPY postStart.sh /root/
 RUN chown -R jenkins:jenkins $JENKINS_HOME/
 
@@ -32,3 +33,5 @@ ENV SEED_GIT_URL https://github.com/fabric8io/default-jenkins-dsl.git
 ENV KUBERNETES_TRUST_CERTIFICATES true
 ENV SKIP_TLS_VERIFY true
 ENV JAVA_OPTS="-Djava.util.logging.config.file=/var/jenkins_home/log.properties"
+
+ENTRYPOINT ["/root/start.sh"]
