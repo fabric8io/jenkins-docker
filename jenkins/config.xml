@@ -27,6 +27,7 @@
 					<remoteFs>/home/jenkins</remoteFs>
 					<instanceCap>20</instanceCap>
 					<label>kubernetes</label>
+					<serviceAccount>fabric8</serviceAccount>
 					<volumes>
 						<org.csanchez.jenkins.plugins.kubernetes.PodVolumes_-HostPathVolume>
 							<mountPath>/var/run/docker.sock</mountPath>
