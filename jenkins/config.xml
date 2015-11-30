@@ -137,7 +137,7 @@
 					</envVars>
 				</org.csanchez.jenkins.plugins.kubernetes.PodTemplate>
 			</templates>
-			<serverUrl>https://kubernetes</serverUrl>
+			<serverUrl>https://kubernetes.default</serverUrl>
 			<skipTlsVerify>false</skipTlsVerify>
 			<namespace>default</namespace>
 			<jenkinsUrl>http://jenkins:80</jenkinsUrl>
