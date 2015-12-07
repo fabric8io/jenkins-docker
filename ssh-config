@@ -1,5 +1,5 @@
 Host github.com
    User git
-   IdentityFile /var/jenkins/.ssh-git/ssh-key
+   IdentityFile /home/jenkins/.ssh-git/ssh-key
    StrictHostKeyChecking no
 
