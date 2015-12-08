@@ -86,3 +86,4 @@ workflow-step-api:1.11
 workflow-support:1.11
 ws-cleanup:0.28
 swarm:2.0
+openshift-pipeline:1.0.3
