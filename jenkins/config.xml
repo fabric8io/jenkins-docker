@@ -24,7 +24,7 @@
 					<privileged>true</privileged>
 					<command></command>
 					<args></args>
-					<remoteFs>/home/jenkins</remoteFs>
+					<remoteFs>/home/jenkins/workspace</remoteFs>
 					<instanceCap>20</instanceCap>
 					<label>kubernetes</label>
 					<serviceAccount>fabric8</serviceAccount>
