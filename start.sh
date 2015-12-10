@@ -15,5 +15,9 @@ interpolate_env() {
 	done
 }
 
+
+if [ -z "$PROJECT_VERSION" ]; then
+	PROJECT_VERSION="latest"
+fi
 interpolate_env /var/jenkins_home/config.xml
 /bin/tini -- /usr/local/bin/jenkins.sh $*
