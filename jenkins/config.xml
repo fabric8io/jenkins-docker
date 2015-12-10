@@ -20,7 +20,7 @@
 			<templates>
 				<org.csanchez.jenkins.plugins.kubernetes.PodTemplate>
 					<name>slave</name>
-					<image>fabric8/jenkins-jnlp-client</image>
+					<image>fabric8/jenkins-jnlp-client:${PROJECT_VERSION}</image>
 					<privileged>true</privileged>
 					<command></command>
 					<args></args>
