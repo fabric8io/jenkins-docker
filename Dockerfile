@@ -34,4 +34,6 @@ ENV KUBERNETES_TRUST_CERTIFICATES true
 ENV SKIP_TLS_VERIFY true
 ENV JAVA_OPTS="-Djava.util.logging.config.file=/var/jenkins_home/log.properties"
 
+# use development version of openshift jenkins plugin
+COPY openshift-pipeline.hpi /usr/share/jenkins/ref/plugins/
 ENTRYPOINT ["/root/start.sh"]
