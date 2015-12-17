@@ -8,7 +8,7 @@
         <hudson.tools.InstallSourceProperty>
           <installers>
             <hudson.tools.ZipExtractionInstaller>
-              <url>https://github.com/openshift/origin/releases/download/v1.1.0.1/openshift-origin-v1.1.0.1-bf56e23-linux-amd64.tar.gz</url>
+              <url>https://github.com/openshift/origin/releases/download/v1.1.0.1/openshift-origin-client-tools-v1.1.0.1-bf56e23-linux-64bit.tar.gz</url>
             </hudson.tools.ZipExtractionInstaller>
           </installers>
         </hudson.tools.InstallSourceProperty>
