@@ -28,4 +28,3 @@ Environment variables
 
 * `NEXUS_SERVICE_HOST` host where nexus is running
 * `NEXUS_SERVICE_PORT` port where nexus is running
-* `SEED_GIT_URL` the git URL to clone for the seed job
