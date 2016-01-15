@@ -144,7 +144,7 @@
 			</templates>
 			<serverUrl>https://kubernetes.default</serverUrl>
 			<skipTlsVerify>false</skipTlsVerify>
-			<namespace>default</namespace>
+			<namespace>${KUBERNETES_NAMESPACE}</namespace>
 			<jenkinsUrl>http://jenkins:80</jenkinsUrl>
 			<containerCap>10</containerCap>
 			<retentionTimeout>5</retentionTimeout>
