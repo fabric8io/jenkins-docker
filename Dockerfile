@@ -23,8 +23,8 @@ COPY start.sh /root/
 COPY postStart.sh /root/
 RUN chown -R jenkins:jenkins $JENKINS_HOME/
 
+ENV JAVA_OPTS="-Djava.util.logging.config.file=/var/jenkins_home/log.properties -Ddocker.host=unix:/var/run/docker.sock"
 
-ENV JAVA_OPTS="-Djava.util.logging.config.file=/var/jenkins_home/log.properties"
-
+EXPOSE 8000
 
 ENTRYPOINT ["/root/start.sh"]
