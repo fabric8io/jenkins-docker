@@ -139,6 +139,10 @@
 							<key>KUBERNETES_NAMESPACE</key>
 							<value>${KUBERNETES_NAMESPACE}</value>
 						</org.csanchez.jenkins.plugins.kubernetes.PodEnvVar>
+						<org.csanchez.jenkins.plugins.kubernetes.PodEnvVar>
+							<key>DOCKER_HOST</key>
+							<value>unix:/var/run/docker.sock</value>
+						</org.csanchez.jenkins.plugins.kubernetes.PodEnvVar>
 					</envVars>
 				</org.csanchez.jenkins.plugins.kubernetes.PodTemplate>
 			</templates>
