@@ -62,7 +62,7 @@ naginator:1.16
 notification:1.10
 pam-auth:1.2
 parameterized-trigger:2.29
-pipeline-utility-steps-plugin:1.1.3
+pipeline-utility-steps:1.1.3
 plain-credentials:1.1
 promoted-builds:2.23.1
 repository:1.2
