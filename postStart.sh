@@ -4,16 +4,6 @@
 # add lots of error handling.  If this script fails it's hard to know why the pods keeps restarting
 # ***** IMPORTANT *****
 
-# This is temporary and should be moved into a preStart hook when available, copying
-# job configs to /usr/share/jenkins/ref/jobs and letting jenkins create them
-# and avoid the reload below
-if [ "$JENKINS_JOBS_GIT_REPOSITORY" ]; then
-  rm -rf /var/jenkins_home/jobs
-  git clone "$JENKINS_JOBS_GIT_REPOSITORY" /var/jenkins_home/jobs
-  rm -rf /var/jenkins_home/jobs/README.md
-  curl -X POST  http://localhost:8080/reload
-fi
-
 # Initialise the workflow global git repo with reusable scripts
 if [ "$JENKINS_WORKFLOW_GIT_REPOSITORY" ]; then
   git clone "$JENKINS_WORKFLOW_GIT_REPOSITORY" /root/repositoryscripts
