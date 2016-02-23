@@ -57,6 +57,10 @@
 							<mountPath>/home/jenkins/.m2</mountPath>
 							<secretName>jenkins-maven-settings</secretName>
 						</org.csanchez.jenkins.plugins.kubernetes.PodVolumes_-SecretVolume>
+						<org.csanchez.jenkins.plugins.kubernetes.PodVolumes_-SecretVolume>
+							<mountPath>/home/jenkins/.apitoken</mountPath>
+							<secretName>jenkins-hub-api-token</secretName>
+						</org.csanchez.jenkins.plugins.kubernetes.PodVolumes_-SecretVolume>
 					</volumes>
 					<envVars>
 						<org.csanchez.jenkins.plugins.kubernetes.PodEnvVar>
