@@ -40,6 +40,7 @@ github-branch-source:1.1
 github-oauth:0.22.2
 groovy:1.27
 groovy-postbuild:2.2.2
+handlebars:1.1.1
 jackson2-api:2.5.4
 javadoc:1.3
 job-dsl:1.40
@@ -57,11 +58,13 @@ maven-deployment-linker:1.5.1
 maven-plugin:2.12.1
 mercurial:1.54
 metrics:3.1.2.1
+momentjs:1.1.1
 multi-branch-project-plugin:0.4.1
 naginator:1.16
 notification:1.10
 pam-auth:1.2
 parameterized-trigger:2.29
+pipeline-rest-api:1.0
 pipeline-stage-view:1.0
 pipeline-utility-steps:1.1.3
 plain-credentials:1.1
