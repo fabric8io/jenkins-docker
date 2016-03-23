@@ -6,7 +6,7 @@
 
 # Initialise the workflow global git repo with reusable scripts
 # Default library can be overritten using $JENKINS_WORKFLOW_GIT_REPOSITORY env var
-if [ ! -z "$JENKINS_WORKFLOW_GIT_REPOSITORY" ] && [ "$JENKINS_WORKFLOW_GIT_REPOSITORY" != "default" ]; then
+if [ ! -z "$JENKINS_WORKFLOW_GIT_REPOSITORY" ] && [ "$JENKINS_WORKFLOW_GIT_REPOSITORY" != "https://github.com/fabric8io/jenkins-workflow-library.git" ]; then
   rm -rf /root/repositoryscripts
   git clone "$JENKINS_WORKFLOW_GIT_REPOSITORY" /root/repositoryscripts
 fi
