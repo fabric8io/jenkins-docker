@@ -23,4 +23,6 @@ ENV JAVA_OPTS="-Djava.util.logging.config.file=/var/jenkins_home/log.properties 
 
 EXPOSE 8000
 
+RUN git clone https://github.com/fabric8io/jenkins-workflow-library.git /root/repositoryscripts
+
 ENTRYPOINT ["/root/start.sh"]
