@@ -12,8 +12,8 @@ COPY config/jenkins.properties /usr/share/jenkins/
 COPY config/*.groovy /usr/share/jenkins/ref/init.groovy.d/
 
 # lets configure and add default jobs
-COPY config/*.xml log $JENKINS_HOME/
-
+COPY config/*.xml $JENKINS_HOME/
+# add loggers
 COPY log/*.xml $JENKINS_HOME/log/
 
 USER root
