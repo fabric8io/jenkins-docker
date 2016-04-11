@@ -158,6 +158,7 @@
 			<skipTlsVerify>false</skipTlsVerify>
 			<namespace>${KUBERNETES_NAMESPACE}</namespace>
 			<jenkinsUrl>http://jenkins:80</jenkinsUrl>
+			<jenkinsTunnel>jenkins-jnlp:50000</jenkinsTunnel>
 			<containerCap>10</containerCap>
 			<retentionTimeout>5</retentionTimeout>
 		</org.csanchez.jenkins.plugins.kubernetes.KubernetesCloud>
