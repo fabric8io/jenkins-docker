@@ -9,7 +9,7 @@
 # and avoid the reload below
 if [ ! -z "$JENKINS_JOBS_GIT_REPOSITORY" ] && [[ ! "$JENKINS_JOBS_GIT_REPOSITORY" =~ "JENKINS_JOBS_GIT_REPOSITORY" ]]; then
   rm -rf /var/jenkins_home/jobs
-  git clone "$JENKINS_JOBS_GIT_REPOSITORY" /var/jenkins_home/jobs
+  git clone "$JENKINS_JOBS_GIT_REPOSITORY" $JENKINS_HOME/jobs
   rm -rf /var/jenkins_home/jobs/README.md
   curl -X POST  http://localhost:8080/reload
 fi
