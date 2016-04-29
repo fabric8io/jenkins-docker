@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <hudson>
 	<disabledAdministrativeMonitors/>
-	<version>1.609.2</version>
+	<version>2.0</version>
 	<numExecutors>0</numExecutors>
 	<mode>NORMAL</mode>
 	<useSecurity>true</useSecurity>
@@ -19,7 +19,7 @@
 			<name>kubernetes</name>
 			<templates>
 				<org.csanchez.jenkins.plugins.kubernetes.PodTemplate>
-					<name>slave</name>
+					<name>kubernetes</name>
 					<image>fabric8/jenkins-jnlp-client:${PROJECT_VERSION}</image>
 					<privileged>true</privileged>
 					<command></command>
@@ -27,7 +27,7 @@
 					<remoteFs>/home/jenkins/workspace</remoteFs>
 					<instanceCap>20</instanceCap>
 					<label>kubernetes</label>
-					<serviceAccount>fabric8</serviceAccount>
+					<serviceAccount>jenkins</serviceAccount>
 					<volumes>
 						<org.csanchez.jenkins.plugins.kubernetes.PodVolumes_-HostPathVolume>
 							<mountPath>/var/run/docker.sock</mountPath>
