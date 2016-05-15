@@ -1,10 +1,10 @@
-FROM jenkinsci/jenkins:2.0
+FROM jenkinsci/jenkins:2.2
 
 COPY plugins.txt /usr/share/jenkins/plugins.txt
 RUN /usr/local/bin/plugins.sh /usr/share/jenkins/plugins.txt
 
 #Copy plugins
-COPY plugins/*.hpi /usr/share/jenkins/ref/plugins/
+#COPY plugins/*.hpi /usr/share/jenkins/ref/plugins/
 
 COPY config/jenkins.properties /usr/share/jenkins/
 
@@ -25,6 +25,6 @@ ENV JAVA_OPTS="-Djava.util.logging.config.file=/var/jenkins_home/log.properties 
 
 EXPOSE 8000
 
-RUN git clone https://github.com/fabric8io/jenkins-workflow-library.git /root/repositoryscripts
-
+RUN git clone https://github.com/rawlingsj/jenkins-workflow-library.git /root/repositoryscripts
+COPY plugins/*.hpi /usr/share/jenkins/ref/plugins/
 ENTRYPOINT ["/root/start.sh"]
