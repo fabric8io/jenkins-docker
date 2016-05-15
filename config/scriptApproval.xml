@@ -3,6 +3,9 @@
   <approvedScriptHashes>
   </approvedScriptHashes>
   <approvedSignatures>
+    <string>method io.fabric8.kubernetes.api.model.KubernetesResourceList getItems</string>
+    <string>method io.fabric8.kubernetes.client.dsl.KubernetesDSL nodes</string>
+    <string>method io.fabric8.kubernetes.client.dsl.Listable list</string>
     <string>method groovy.json.JsonSlurper parse java.io.Reader</string>
     <string>method groovy.lang.GString plus java.lang.String</string>
     <string>method groovy.lang.GroovyObject getProperty java.lang.String</string>
@@ -19,6 +22,7 @@
     <string>method java.net.URLConnection getOutputStream</string>
     <string>method java.io.Writer write java.lang.String</string>
     <string>method java.io.Flushable flush</string>
+    <string>new io.fabric8.kubernetes.client.DefaultKubernetesClient</string>
     <string>new groovy.json.JsonSlurper</string>
     <string>new groovy.util.ConfigSlurper</string>
     <string>new groovy.util.XmlSlurper</string>
