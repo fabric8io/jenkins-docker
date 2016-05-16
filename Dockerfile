@@ -1,15 +1,15 @@
-FROM jenkinsci/jenkins:2.2
+FROM jenkins:1.642.2
 
 COPY plugins.txt /usr/share/jenkins/plugins.txt
 RUN /usr/local/bin/plugins.sh /usr/share/jenkins/plugins.txt
 
 #Copy plugins
-#COPY plugins/*.hpi /usr/share/jenkins/ref/plugins/
+COPY plugins/*.hpi /usr/share/jenkins/ref/plugins/
 
 COPY config/jenkins.properties /usr/share/jenkins/
 
 # remove executors in master
-#COPY config/*.groovy /usr/share/jenkins/ref/init.groovy.d/
+COPY config/*.groovy /usr/share/jenkins/ref/init.groovy.d/
 
 # lets configure and add default jobs
 COPY config/*.xml $JENKINS_HOME/
@@ -25,6 +25,6 @@ ENV JAVA_OPTS="-Djava.util.logging.config.file=/var/jenkins_home/log.properties 
 
 EXPOSE 8000
 
-RUN git clone https://github.com/rawlingsj/jenkins-workflow-library.git /root/repositoryscripts
-COPY plugins/*.hpi /usr/share/jenkins/ref/plugins/
+RUN git clone https://github.com/fabric8io/jenkins-workflow-library.git /root/repositoryscripts
+
 ENTRYPOINT ["/root/start.sh"]
