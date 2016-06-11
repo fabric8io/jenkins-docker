@@ -1,6 +1,6 @@
 #!/bin/bash
 
-KUBE_PIPELINE_DIR=../kubernetes-workflow
+KUBE_PIPELINE_DIR=../kubernetes-pipeline
 
-cp $KUBE_PIPELINE_DIR/kubernetes-steps/target/kubernetes-steps.hpi plugins
-cp $KUBE_PIPELINE_DIR/devops-steps/target/devops-steps.hpi plugins
+cp $KUBE_PIPELINE_DIR/kubernetes-steps/target/kubernetes-pipeline-steps.hpi plugins
+cp $KUBE_PIPELINE_DIR/devops-steps/target/kubernetes-pipeline-devops-steps.hpi plugins
