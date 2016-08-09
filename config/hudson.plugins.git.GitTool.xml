@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<hudson.plugins.git.GitTool_-DescriptorImpl plugin="git-client@1.17.0">
-    <installations class="hudson.plugins.git.GitTool-array">
-        <org.jenkinsci.plugins.gitclient.JGitTool>
-            <name>jgit</name>
-            <home>jgit</home>
-            <properties/>
-        </org.jenkinsci.plugins.gitclient.JGitTool>
-    </installations>
+<hudson.plugins.git.GitTool_-DescriptorImpl plugin="git-client@1.19.0">
+  <installations class="hudson.plugins.git.GitTool-array">
+    <hudson.plugins.git.GitTool>
+      <name>git</name>
+      <home>/usr/bin/git</home>
+      <properties/>
+    </hudson.plugins.git.GitTool>
+  </installations>
 </hudson.plugins.git.GitTool_-DescriptorImpl>
