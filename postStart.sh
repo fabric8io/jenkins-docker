@@ -45,3 +45,6 @@ if [[ -d "/root/repositoryscripts/src" && -d "/root/repositoryscripts/vars" ]]; 
   rm -rf /root/repositoryscripts
 
 fi
+
+chmod -R 700 /root/.ssh
+chmod -R 700 /home/jenkins/.ssh-git
