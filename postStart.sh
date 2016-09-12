@@ -46,10 +46,10 @@ if [[ -d "/root/repositoryscripts/src" && -d "/root/repositoryscripts/vars" ]]; 
 
 fi
 
-if [ -f "/root/.ssh" ]; then
+if [ -d "/root/.ssh" ]; then
   chmod -R 700 /root/.ssh
 fi
 
-if [ -f "/home/jenkins/.ssh-git" ]; then
+if [ -d "/home/jenkins/.ssh-git" ]; then
   chmod -R 700 /home/jenkins/.ssh-git
 fi
