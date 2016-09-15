@@ -147,6 +147,11 @@
 							<key>KUBERNETES_NAMESPACE</key>
 							<value>${KUBERNETES_NAMESPACE}</value>
 						</org.csanchez.jenkins.plugins.kubernetes.PodEnvVar>
+						<!-- <value>kubernetes.default</value> see https://github.com/fabric8io/fabric8/issues/6229#issuecomment-247373967 -->
+						<org.csanchez.jenkins.plugins.kubernetes.PodEnvVar>
+							<key>KUBERNETES_MASTER</key>
+							<value>kubernetes.default</value>
+						</org.csanchez.jenkins.plugins.kubernetes.PodEnvVar>
 						<org.csanchez.jenkins.plugins.kubernetes.PodEnvVar>
 							<key>DOCKER_HOST</key>
 							<value>unix:/var/run/docker.sock</value>
