@@ -27,7 +27,7 @@ interpolate_env /var/jenkins_home/config.xml
 # https://docs.openshift.org/latest/creating_images/guidelines.html#use-uid
 export USER_ID=$(id -u)
 export GROUP_ID=$(id -g)
-envsubst < ${HOME}/passwd.template > /tmp/passwd
+envsubst < root/passwd.template > /tmp/passwd
 export LD_PRELOAD=libnss_wrapper.so
 export NSS_WRAPPER_PASSWD=/tmp/passwd
 export NSS_WRAPPER_GROUP=/etc/group

@@ -1,4 +1,4 @@
-FROM iocanel/jenkins-base:1.651.2
+FROM fabric8/jenkins-base:1.651.2
 
 COPY plugins.txt /usr/share/jenkins/plugins.txt
 RUN /usr/local/bin/plugins.sh /usr/share/jenkins/plugins.txt
