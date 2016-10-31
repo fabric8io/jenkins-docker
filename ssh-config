@@ -1,5 +1,0 @@
-Host github.com
-   User git
-   IdentityFile /home/jenkins/.ssh-git/ssh-key
-   StrictHostKeyChecking no
-
