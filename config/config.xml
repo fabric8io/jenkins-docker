@@ -24,7 +24,7 @@
 					<rootFs>/home/jenkins/</rootFs>
 					<containers>
 						<org.csanchez.jenkins.plugins.kubernetes.ContainerTemplate>
-							<name>jenkins-jnlp</name>
+							<name>jnlp</name>
 							<image>fabric8/jenkins-jnlp-client:${PROJECT_VERSION}</image>
 							<command></command>
 							<args>${computer.jnlpmac} ${computer.name}</args>
