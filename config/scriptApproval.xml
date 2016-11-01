@@ -17,8 +17,11 @@
     <string>method groovy.util.slurpersupport.GPathResult text</string>
     <string>method groovy.xml.DOMBuilder parseText java.lang.String</string>
     <string>method io.fabric8.kubernetes.api.model.KubernetesResourceList getItems</string>
-    <string>method io.fabric8.kubernetes.client.dsl.KubernetesDSL nodes</string>
+    <string>method io.fabric8.kubernetes.client.Client getNamespace</string>
+    <string>method io.fabric8.kubernetes.client.KubernetesClient nodes</string>
+    <string>method io.fabric8.kubernetes.api.model.KubernetesResourceList getItems</string>
     <string>method io.fabric8.kubernetes.client.dsl.Listable list</string>
+    <string>method io.fabric8.kubernetes.client.dsl.KubernetesDSL nodes</string>
     <string>method java.io.File toURL</string>
     <string>method java.io.Flushable flush</string>
     <string>method java.io.Writer write java.lang.String</string>
