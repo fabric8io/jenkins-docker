@@ -168,7 +168,7 @@
 			<retentionTimeout>5</retentionTimeout>
 		</org.csanchez.jenkins.plugins.kubernetes.KubernetesCloud>
 	</clouds>
-	<quietPeriod>5</quietPeriod>
+	<quietPeriod>0</quietPeriod>
 	<scmCheckoutRetryCount>0</scmCheckoutRetryCount>
 	<views>
 		<hudson.model.AllView>
