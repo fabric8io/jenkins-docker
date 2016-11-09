@@ -1,5 +1,10 @@
 FROM jenkins:2.19.1-alpine
 
+USER root
+RUN apk add --no-cache nodejs
+RUN apk add --no-cache python
+USER jenkins
+
 COPY plugins.txt /usr/share/jenkins/plugins.txt
 RUN /usr/local/bin/plugins.sh /usr/share/jenkins/plugins.txt
 
