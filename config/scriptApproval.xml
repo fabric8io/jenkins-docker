@@ -111,6 +111,7 @@
     <string>staticMethod org.codehaus.groovy.runtime.ScriptBytecodeAdapter compareGreaterThan java.lang.Object java.lang.Object</string>
     <string>staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods isNumber java.lang.String</string>
     <string>staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods invokeMethod java.lang.Object java.lang.String java.lang.Object</string>
+    <string>staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods get java.util.Map java.lang.Object java.lang.Object</string>
   </approvedSignatures>
   <aclApprovedSignatures>
     <string>method groovy.util.ConfigSlurper parse java.util.Properties</string>
