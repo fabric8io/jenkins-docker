@@ -25,6 +25,20 @@
 					<remoteFs>/home/jenkins/workspace</remoteFs>
 					<rootFs>/home/jenkins/</rootFs>
 					<instanceCap>20</instanceCap>
+					<envVars>
+						<org.csanchez.jenkins.plugins.kubernetes.PodEnvVar>
+							<key>KUBERNETES_MASTER</key>
+							<value>https://kubernetes.default</value>
+						</org.csanchez.jenkins.plugins.kubernetes.PodEnvVar>
+						<org.csanchez.jenkins.plugins.kubernetes.PodEnvVar>
+							<key>KUBERNETES_TRUST_CERTIFICATES</key>
+							<value>true</value>
+						</org.csanchez.jenkins.plugins.kubernetes.PodEnvVar>
+						<org.csanchez.jenkins.plugins.kubernetes.PodEnvVar>
+							<key>KUBERNETES_NAMESPACE</key>
+							<value>${KUBERNETES_NAMESPACE}</value>
+						</org.csanchez.jenkins.plugins.kubernetes.PodEnvVar>
+					</envVars>
 					<containers>
 						<org.csanchez.jenkins.plugins.kubernetes.ContainerTemplate>
 							<name>jnlp</name>
@@ -64,6 +78,28 @@
 					<remoteFs>/home/jenkins/workspace</remoteFs>
 					<rootFs>/home/jenkins/</rootFs>
 					<instanceCap>20</instanceCap>
+					<envVars>
+						<org.csanchez.jenkins.plugins.kubernetes.PodEnVar>
+							<key>SONATYPE_USERNAME</key>
+							<value>${SONATYPE_USERNAME}</value>
+						</org.csanchez.jenkins.plugins.kubernetes.PodEnVar>
+						<org.csanchez.jenkins.plugins.kubernetes.PodEnvVar>
+							<key>SONATYPE_PASSWORD</key>
+							<value>${SONATYPE_PASSWORD}</value>
+						</org.csanchez.jenkins.plugins.kubernetes.PodEnvVar>
+						<org.csanchez.jenkins.plugins.kubernetes.PodEnvVar>
+							<key>GPG_PASSPHRASE</key>
+							<value>${GPG_PASSPHRASE}</value>
+						</org.csanchez.jenkins.plugins.kubernetes.PodEnvVar>
+						<org.csanchez.jenkins.plugins.kubernetes.PodEnvVar>
+							<key>NEXUS_USERNAME</key>
+							<value>${NEXUS_USERNAME}</value>
+						</org.csanchez.jenkins.plugins.kubernetes.PodEnvVar>
+						<org.csanchez.jenkins.plugins.kubernetes.PodEnvVar>
+							<key>NEXUS_PASSWORD</key>
+							<value>${NEXUS_PASSWORD}</value>
+						</org.csanchez.jenkins.plugins.kubernetes.PodEnvVar>
+					</envVars>
 					<containers>
 						<org.csanchez.jenkins.plugins.kubernetes.ContainerTemplate>
 							<name>jnlp</name>
@@ -162,6 +198,12 @@
 							<workingDir>/home/jenkins/</workingDir>
 						</org.csanchez.jenkins.plugins.kubernetes.ContainerTemplate>
 					</containers>
+					<envVars>
+						<org.csanchez.jenkins.plugins.kubernetes.PodEnVar>
+							<key>MAVEN_OPTS</key>
+							<value>-Duser.home=/root/</value>
+						</org.csanchez.jenkins.plugins.kubernetes.PodEnVar>
+					</envVars>
 					<volumes>
 						<org.csanchez.jenkins.plugins.kubernetes.PodVolumes_-SecretVolume>
 							<mountPath>/root/.m2</mountPath>
