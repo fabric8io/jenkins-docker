@@ -50,23 +50,23 @@
 					</containers>
 					<volumes>
 						<org.csanchez.jenkins.plugins.kubernetes.PodVolumes_-SecretVolume>
-							<mountPath>/home/jenkins/.ssh-git</mountPath>
+							<mountPath>/root.ssh-git</mountPath>
 							<secretName>jenkins-git-ssh</secretName>
 						</org.csanchez.jenkins.plugins.kubernetes.PodVolumes_-SecretVolume>
 						<org.csanchez.jenkins.plugins.kubernetes.PodVolumes_-SecretVolume>
-							<mountPath>/home/jenkins/.ssh</mountPath>
+							<mountPath>/root.ssh</mountPath>
 							<secretName>jenkins-ssh-config</secretName>
 						</org.csanchez.jenkins.plugins.kubernetes.PodVolumes_-SecretVolume>
 						<org.csanchez.jenkins.plugins.kubernetes.PodVolumes_-SecretVolume>
-							<mountPath>/home/jenkins/.gnupg</mountPath>
+							<mountPath>/root.gnupg</mountPath>
 							<secretName>jenkins-release-gpg</secretName>
 						</org.csanchez.jenkins.plugins.kubernetes.PodVolumes_-SecretVolume>
 						<org.csanchez.jenkins.plugins.kubernetes.PodVolumes_-SecretVolume>
-							<mountPath>/home/jenkins/ssh-keys</mountPath>
+							<mountPath>/rootssh-keys</mountPath>
 							<secretName>jenkins-master-ssh</secretName>
 						</org.csanchez.jenkins.plugins.kubernetes.PodVolumes_-SecretVolume>
 						<org.csanchez.jenkins.plugins.kubernetes.PodVolumes_-SecretVolume>
-							<mountPath>/home/jenkins/.apitoken</mountPath>
+							<mountPath>/root.apitoken</mountPath>
 							<secretName>jenkins-hub-api-token</secretName>
 						</org.csanchez.jenkins.plugins.kubernetes.PodVolumes_-SecretVolume>
 					</volumes>
@@ -103,6 +103,7 @@
 					<containers>
 						<org.csanchez.jenkins.plugins.kubernetes.ContainerTemplate>
 							<name>jnlp</name>
+							<image>fabric8/jenkins-jnlp-client:${PROJECT_VERSION}</image>
 							<envVars>
 								<org.csanchez.jenkins.plugins.kubernetes.ContainerEnvVar>
 									<key>SONATYPE_USERNAME</key>
@@ -129,7 +130,7 @@
 					</containers>
 					<volumes>
 						<org.csanchez.jenkins.plugins.kubernetes.PodVolumes_-SecretVolume>
-							<mountPath>/home/jenkins/.gnupg</mountPath>
+							<mountPath>/root.gnupg</mountPath>
 							<secretName>jenkins-release-gpg</secretName>
 						</org.csanchez.jenkins.plugins.kubernetes.PodVolumes_-SecretVolume>
 					</volumes>
@@ -144,6 +145,7 @@
 					<containers>
 						<org.csanchez.jenkins.plugins.kubernetes.ContainerTemplate>
 							<name>jnlp</name>
+							<image>fabric8/jenkins-jnlp-client:${PROJECT_VERSION}</image>
 							<envVars>
 								<org.csanchez.jenkins.plugins.kubernetes.ContainerEnvVar>
 									<key>DOCKER_HOST</key>
@@ -158,7 +160,7 @@
 							<hostPath>/var/run/docker.sock</hostPath>
 						</org.csanchez.jenkins.plugins.kubernetes.PodVolumes_-HostPathVolume>
 						<org.csanchez.jenkins.plugins.kubernetes.PodVolumes_-SecretVolume>
-							<mountPath>/home/jenkins/.docker</mountPath>
+							<mountPath>/root.docker</mountPath>
 							<secretName>jenkins-docker-cfg</secretName>
 						</org.csanchez.jenkins.plugins.kubernetes.PodVolumes_-SecretVolume>
 					</volumes>
@@ -222,6 +224,7 @@
 					<containers>
 						<org.csanchez.jenkins.plugins.kubernetes.ContainerTemplate>
 							<name>jnlp</name>
+							<image>fabric8/jenkins-jnlp-client:${PROJECT_VERSION}</image>
 							<envVars>
 								<org.csanchez.jenkins.plugins.kubernetes.ContainerEnvVar>
 									<key>DOMAIN</key>
@@ -309,7 +312,7 @@
 								</org.csanchez.jenkins.plugins.kubernetes.ContainerEnvVar>
 								<org.csanchez.jenkins.plugins.kubernetes.ContainerEnvVar>
 									<key>DOCKER_AUTH_DOCKERCFG_PATH</key>
-									<value>/home/jenkins/.docker/config.json</value>
+									<value>/root.docker/config.json</value>
 								</org.csanchez.jenkins.plugins.kubernetes.ContainerEnvVar>
 							</envVars>
 						</org.csanchez.jenkins.plugins.kubernetes.ContainerTemplate>
@@ -323,31 +326,31 @@
 							<hostPath>/var/run/docker.sock</hostPath>
 						</org.csanchez.jenkins.plugins.kubernetes.PodVolumes_-HostPathVolume>
 						<org.csanchez.jenkins.plugins.kubernetes.PodVolumes_-SecretVolume>
-							<mountPath>/home/jenkins/.ssh-git</mountPath>
+							<mountPath>/root.ssh-git</mountPath>
 							<secretName>jenkins-git-ssh</secretName>
 						</org.csanchez.jenkins.plugins.kubernetes.PodVolumes_-SecretVolume>
 						<org.csanchez.jenkins.plugins.kubernetes.PodVolumes_-SecretVolume>
-							<mountPath>/home/jenkins/.ssh</mountPath>
+							<mountPath>/root.ssh</mountPath>
 							<secretName>jenkins-ssh-config</secretName>
 						</org.csanchez.jenkins.plugins.kubernetes.PodVolumes_-SecretVolume>
 						<org.csanchez.jenkins.plugins.kubernetes.PodVolumes_-SecretVolume>
-							<mountPath>/home/jenkins/.gnupg</mountPath>
+							<mountPath>/root.gnupg</mountPath>
 							<secretName>jenkins-release-gpg</secretName>
 						</org.csanchez.jenkins.plugins.kubernetes.PodVolumes_-SecretVolume>
 						<org.csanchez.jenkins.plugins.kubernetes.PodVolumes_-SecretVolume>
-							<mountPath>/home/jenkins/ssh-keys</mountPath>
+							<mountPath>/rootssh-keys</mountPath>
 							<secretName>jenkins-master-ssh</secretName>
 						</org.csanchez.jenkins.plugins.kubernetes.PodVolumes_-SecretVolume>
 						<org.csanchez.jenkins.plugins.kubernetes.PodVolumes_-SecretVolume>
-							<mountPath>/home/jenkins/.docker</mountPath>
+							<mountPath>/root.docker</mountPath>
 							<secretName>jenkins-docker-cfg</secretName>
 						</org.csanchez.jenkins.plugins.kubernetes.PodVolumes_-SecretVolume>
 						<org.csanchez.jenkins.plugins.kubernetes.PodVolumes_-SecretVolume>
-							<mountPath>/home/jenkins/.m2</mountPath>
+							<mountPath>/root.m2</mountPath>
 							<secretName>jenkins-maven-settings</secretName>
 						</org.csanchez.jenkins.plugins.kubernetes.PodVolumes_-SecretVolume>
 						<org.csanchez.jenkins.plugins.kubernetes.PodVolumes_-SecretVolume>
-							<mountPath>/home/jenkins/.apitoken</mountPath>
+							<mountPath>/root.apitoken</mountPath>
 							<secretName>jenkins-hub-api-token</secretName>
 						</org.csanchez.jenkins.plugins.kubernetes.PodVolumes_-SecretVolume>
 					</volumes>
