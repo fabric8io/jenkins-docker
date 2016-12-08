@@ -9,6 +9,7 @@
     <string>method groovy.json.JsonSlurper parse java.io.Reader</string>
     <string>method groovy.lang.GString plus java.lang.String</string>
     <string>method groovy.lang.GroovyObject getProperty java.lang.String</string>
+    <string>method io.fabric8.kubernetes.client.Client isAdaptable java.lang.Class</string>
     <string>method groovy.lang.GroovyObject invokeMethod java.lang.String java.lang.Object</string>
     <string>method groovy.util.ConfigSlurper parse java.net.URL</string>
     <string>method groovy.util.ConfigSlurper parse java.util.Properties</string>
