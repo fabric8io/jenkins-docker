@@ -37,6 +37,8 @@
     <string>method java.net.URLConnection getOutputStream</string>
     <string>method java.net.URLConnection setDoInput boolean</string>
     <string>method java.util.Properties load java.io.InputStream</string>
+    <string>method java.util.regex.Matcher group java.lang.String</string>
+    <string>method java.util.regex.Matcher matches</string>
     <string>method java.net.URLConnection setDoOutput boolean</string>
     <string>method java.net.URLConnection getOutputStream</string>
     <string>method java.io.Writer write java.lang.String</string>
