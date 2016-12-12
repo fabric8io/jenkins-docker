@@ -115,6 +115,15 @@
     <string>staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods isNumber java.lang.String</string>
     <string>staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods invokeMethod java.lang.Object java.lang.String java.lang.Object</string>
     <string>staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods get java.util.Map java.lang.Object java.lang.Object</string>
+    <string>method org.w3c.dom.Document getElementsByTagName java.lang.String</string>
+    <string>method org.w3c.dom.NodeList getLength</string>
+    <string>method org.w3c.dom.NodeList item int</string>
+    <string>method org.w3c.dom.Node getTextContent</string>
+    <string>method org.w3c.dom.Node setTextContent java.lang.String</string>
+    <string>staticMethod groovy.xml.XmlUtil serialize org.w3c.dom.Element</string>
+    <string>staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods minus java.lang.String java.lang.Object</string>
+    <string>new groovy.json.JsonSlurperClassic</string>
+    <string>method groovy.json.JsonSlurperClassic parse java.io.Reader</string>
   </approvedSignatures>
   <aclApprovedSignatures>
     <string>method groovy.util.ConfigSlurper parse java.util.Properties</string>
