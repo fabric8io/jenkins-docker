@@ -22,7 +22,6 @@
     <string>method io.fabric8.kubernetes.client.KubernetesClient nodes</string>
     <string>method io.fabric8.kubernetes.api.model.KubernetesResourceList getItems</string>
     <string>method io.fabric8.kubernetes.client.dsl.Listable list</string>
-    <string>method io.fabric8.kubernetes.client.dsl.KubernetesDSL nodes</string>
     <string>method java.io.File toURL</string>
     <string>method java.io.Flushable flush</string>
     <string>method java.io.Writer write java.lang.String</string>
@@ -63,6 +62,7 @@
     <string>new java.io.InputStreamReader java.io.InputStream</string>
     <string>staticField groovy.io.FileType FILES</string>
     <string>staticMethod groovy.xml.DOMBuilder newInstance</string>
+    <string>staticMethod groovy.xml.XmlUtil serialize org.w3c.dom.Element</string>
     <string>staticMethod java.lang.System getenv</string>
     <string>staticMethod java.util.UUID randomUUID</string>
     <string>staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods each java.lang.Object groovy.lang.Closure</string>
@@ -99,12 +99,15 @@
     <string>staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods eachLine java.io.File groovy.lang.Closure</string>
     <string>staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods eachLine java.lang.String groovy.lang.Closure</string>
     <string>staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods eachWithIndex java.lang.Object groovy.lang.Closure</string>
+    <string>staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods get java.util.Map java.lang.Object java.lang.Object</string>
     <string>staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods getCount java.util.regex.Matcher</string>
+    <string>staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods invokeMethod java.lang.Object java.lang.String java.lang.Object</string>
+    <string>staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods isNumber java.lang.String</string>
     <string>staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods leftShift java.util.Collection java.lang.Object</string>
+    <string>staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods minus java.lang.String java.lang.Object</string>
     <string>staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods newReader java.net.URL</string>
     <string>staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods size java.lang.Object[]</string>
     <string>method groovy.util.XmlSlurper parseText java.lang.String</string>
-    <string>staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods invokeMethod java.lang.Object java.lang.String java.lang.Object</string>
     <string>staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods isNumber java.lang.String</string>
     <string>staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods take java.lang.CharSequence int</string>
     <string>staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods toInteger java.lang.String</string>
@@ -113,11 +116,11 @@
     <string>staticMethod org.codehaus.groovy.runtime.ScriptBytecodeAdapter bitwiseNegate java.lang.Object</string>
     <string>staticMethod org.codehaus.groovy.runtime.ScriptBytecodeAdapter compareGreaterThan java.lang.Object java.lang.Object</string>
     <string>staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods isNumber java.lang.String</string>
-    <string>staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods invokeMethod java.lang.Object java.lang.String java.lang.Object</string>
     <string>staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods get java.util.Map java.lang.Object java.lang.Object</string>
     <string>method org.w3c.dom.Document getElementsByTagName java.lang.String</string>
     <string>method org.w3c.dom.NodeList getLength</string>
     <string>method org.w3c.dom.NodeList item int</string>
+    <string>method org.w3c.dom.Element getElementsByTagName java.lang.String</string>
     <string>method org.w3c.dom.Node getTextContent</string>
     <string>method org.w3c.dom.Node setTextContent java.lang.String</string>
     <string>staticMethod groovy.xml.XmlUtil serialize org.w3c.dom.Element</string>
