@@ -7,6 +7,7 @@
     <string>method io.fabric8.kubernetes.client.dsl.KubernetesDSL nodes</string>
     <string>method io.fabric8.kubernetes.client.dsl.Listable list</string>
     <string>method groovy.json.JsonSlurper parse java.io.Reader</string>
+    <string>method groovy.json.JsonSlurperClassic parse java.io.Reader</string>
     <string>method groovy.lang.GString plus java.lang.String</string>
     <string>method groovy.lang.GroovyObject getProperty java.lang.String</string>
     <string>method io.fabric8.kubernetes.client.Client isAdaptable java.lang.Class</string>
@@ -19,15 +20,19 @@
     <string>method groovy.xml.DOMBuilder parseText java.lang.String</string>
     <string>method io.fabric8.kubernetes.api.model.KubernetesResourceList getItems</string>
     <string>method io.fabric8.kubernetes.client.Client getNamespace</string>
+    <string>method io.fabric8.kubernetes.client.Client isAdaptable java.lang.Class</string>
     <string>method io.fabric8.kubernetes.client.KubernetesClient nodes</string>
+    <string>method io.fabric8.kubernetes.client.dsl.KubernetesDSL nodes</string>
     <string>method io.fabric8.kubernetes.api.model.KubernetesResourceList getItems</string>
     <string>method io.fabric8.kubernetes.client.dsl.Listable list</string>
     <string>method java.io.File toURL</string>
     <string>method java.io.Flushable flush</string>
     <string>method java.io.Writer write java.lang.String</string>
     <string>method java.lang.Object getClass</string>
+    <string>method java.lang.String isEmpty</string>
     <string>method java.lang.String replaceAll java.lang.String java.lang.String</string>
     <string>method java.lang.String substring int</string>
+    <string>method java.lang.Throwable printStackTrace</string>
     <string>method java.net.HttpURLConnection disconnect</string>
     <string>method java.net.HttpURLConnection setRequestMethod java.lang.String</string>
     <string>method java.net.URL openConnection</string>
@@ -47,8 +52,19 @@
     <string>method java.io.Writer write java.lang.String</string>
     <string>method java.util.Properties load java.io.InputStream</string>
     <string>method java.io.Flushable flush</string>
+    <string>method java.util.regex.Matcher group java.lang.String</string>
+    <string>method java.util.regex.Matcher matches</string>
     <string>method org.w3c.dom.Document getDocumentElement</string>
+    <string>method org.w3c.dom.Document getElementsByTagName java.lang.String</string>
+    <string>method org.w3c.dom.Element getElementsByTagName java.lang.String</string>
+    <string>method org.w3c.dom.Node getChildNodes</string>
+    <string>method org.w3c.dom.Node getNodeName</string>
+    <string>method org.w3c.dom.Node getTextContent</string>
+    <string>method org.w3c.dom.Node setTextContent java.lang.String</string>
+    <string>method org.w3c.dom.NodeList getLength</string>
+    <string>method org.w3c.dom.NodeList item int</string>
     <string>new groovy.json.JsonSlurper</string>
+    <string>new groovy.json.JsonSlurperClassic</string>
     <string>new groovy.util.ConfigSlurper</string>
     <string>new groovy.util.XmlSlurper</string>
     <string>new io.fabric8.kubernetes.client.DefaultKubernetesClient</string>
@@ -101,11 +117,13 @@
     <string>staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods eachWithIndex java.lang.Object groovy.lang.Closure</string>
     <string>staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods get java.util.Map java.lang.Object java.lang.Object</string>
     <string>staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods getCount java.util.regex.Matcher</string>
+    <string>staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods getText java.net.URL</string>
     <string>staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods invokeMethod java.lang.Object java.lang.String java.lang.Object</string>
     <string>staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods isNumber java.lang.String</string>
     <string>staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods leftShift java.util.Collection java.lang.Object</string>
     <string>staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods minus java.lang.String java.lang.Object</string>
     <string>staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods newReader java.net.URL</string>
+    <string>staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods println groovy.lang.Closure java.lang.Object</string>
     <string>staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods size java.lang.Object[]</string>
     <string>method groovy.util.XmlSlurper parseText java.lang.String</string>
     <string>staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods isNumber java.lang.String</string>
@@ -125,7 +143,6 @@
     <string>method org.w3c.dom.Node setTextContent java.lang.String</string>
     <string>staticMethod groovy.xml.XmlUtil serialize org.w3c.dom.Element</string>
     <string>staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods minus java.lang.String java.lang.Object</string>
-    <string>new groovy.json.JsonSlurperClassic</string>
     <string>method groovy.json.JsonSlurperClassic parse java.io.Reader</string>
   </approvedSignatures>
   <aclApprovedSignatures>
