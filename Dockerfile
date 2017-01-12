@@ -1,8 +1,9 @@
-FROM jenkins:2.32.1-alpine
+FROM jenkins:2.32.1
 
 USER root
-RUN apk add --no-cache nodejs
-RUN apk add --no-cache python
+# dont think these are needed if we dont use the alpine version
+#RUN apk add --no-cache nodejs
+#RUN apk add --no-cache python
 USER jenkins
 
 COPY plugins.txt /usr/share/jenkins/plugins.txt
