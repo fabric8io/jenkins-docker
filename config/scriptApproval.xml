@@ -89,6 +89,7 @@
     <string>staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods eachFileRecurse java.io.File groovy.lang.Closure</string>
     <string>staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods withInputStream java.io.File groovy.lang.Closure</string>
     <string>staticMethod org.codehaus.groovy.runtime.ScriptBytecodeAdapter bitwiseNegate java.lang.Object</string>
+    <string>staticMethod io.fabric8.kubernetes.client.Adapters get java.lang.Class</string>
     <string>method java.lang.Object getClass</string>
     <string>method java.net.URL openConnection</string>
     <string>method java.net.HttpURLConnection disconnect</string>
