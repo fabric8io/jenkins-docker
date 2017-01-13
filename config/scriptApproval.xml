@@ -112,6 +112,7 @@
     <string>new java.lang.String java.lang.String</string>
     <string>new java.util.Properties</string>
     <string>new java.io.InputStreamReader java.io.InputStream java.lang.String</string>
+    <string>new io.fabric8.openshift.client.DefaultOpenShiftClient</string>
     <string>staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods each java.lang.Object groovy.lang.Closure</string>
     <string>staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods eachLine java.io.File groovy.lang.Closure</string>
     <string>staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods eachLine java.lang.String groovy.lang.Closure</string>
