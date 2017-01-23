@@ -42,6 +42,7 @@ github-issues:latest
 github-oauth:latest
 github-organization-folder:latest
 github-pullrequest:latest
+github-pr-coverage-status:latest
 gitlab-merge-request-jenkins:latest
 gitlab-oauth:latest
 gitlab-plugin:latest
