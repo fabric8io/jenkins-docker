@@ -34,11 +34,14 @@ favorite:latest
 git:latest
 git-client:latest
 git-server:latest
+ghprb:latest
 github:latest
 github-api:latest
 github-branch-source:latest
+github-issues:latest
 github-oauth:latest
 github-organization-folder:latest
+github-pullrequest:latest
 gitlab-merge-request-jenkins:latest
 gitlab-oauth:latest
 gitlab-plugin:latest
@@ -71,6 +74,7 @@ pipeline-milestone-step:latest
 pipeline-model-api:latest
 pipeline-model-declarative-agent:latest
 pipeline-model-definition:latest
+pipeline-githubnotify-step:latest
 pipeline-rest-api:latest
 pipeline-stage-step:latest
 pipeline-stage-tags-metadata:latest
