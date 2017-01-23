@@ -63,6 +63,7 @@ mercurial:latest
 metrics:latest
 momentjs:latest
 oic-auth:latest
+oauth-credentials:latest
 openid:latest
 openid4java:latest
 openshift-login:latest
@@ -84,6 +85,7 @@ plain-credentials:latest
 scm-api:latest
 script-security:latest
 sse-gateway:latest
+ssh-agent:latest
 ssh-credentials:latest
 ssh-slaves:latest
 structs:latest
