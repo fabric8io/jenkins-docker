@@ -1,23 +1,16 @@
 FROM jenkins:2.32.1
 
-USER root
-# dont think these are needed if we dont use the alpine version
-#RUN apk add --no-cache nodejs
-#RUN apk add --no-cache python
-USER jenkins
-
 COPY plugins.txt /usr/share/jenkins/plugins.txt
 RUN /usr/local/bin/plugins.sh /usr/share/jenkins/plugins.txt
 
-#Copy plugins
+# copy custom built plugins
 COPY plugins/*.hpi /usr/share/jenkins/ref/plugins/
 
-COPY config/jenkins.properties /usr/share/jenkins/
+# so we can use jenkins cli
+COPY config/jenkins.properties /usr/share/jenkins/ref/
 
 # remove executors in master
 COPY config/*.groovy /usr/share/jenkins/ref/init.groovy.d/
 
-# lets configure and add default jobs
-COPY config/*.xml $JENKINS_HOME/
-
-ENV JAVA_OPTS="-Ddocker.host=unix:/var/run/docker.sock"
+# lets configure Jenkins with some defaults
+COPY config/*.xml /usr/share/jenkins/ref/
