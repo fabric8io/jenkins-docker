@@ -19,7 +19,7 @@ blueocean-rest:latest
 blueocean-rest-impl:latest
 blueocean-web:latest
 bouncycastle-api:latest
-branch-api:latest
+branch-api:2.0.5
 build-timeout:latest
 cloudbees-folder:latest
 credentials:latest
@@ -111,3 +111,4 @@ workflow-scm-step:latest
 workflow-step-api:latest
 workflow-support:latest
 ws-cleanup:latest
+
