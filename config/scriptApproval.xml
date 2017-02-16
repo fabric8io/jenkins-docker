@@ -20,6 +20,7 @@
     <string>method groovy.xml.DOMBuilder parseText java.lang.String</string>
     <string>method io.fabric8.kubernetes.client.Client getNamespace</string>
     <string>method io.fabric8.kubernetes.client.KubernetesClient nodes</string>
+    <string>method io.fabric8.kubernetes.client.KubernetesClient services</string>
     <string>method java.io.File toURL</string>
     <string>method java.io.Flushable flush</string>
     <string>method java.io.Writer write java.lang.String</string>
