@@ -84,6 +84,7 @@
     <string>staticMethod org.codehaus.groovy.runtime.ScriptBytecodeAdapter bitwiseNegate java.lang.Object</string>
     <string>staticMethod io.fabric8.kubernetes.client.Adapters get java.lang.Class</string>
     <string>staticMethod io.fabric8.utils.Strings isNotBlank java.lang.String</string>
+    <string>staticMethod io.fabric8.kubernetes.api.KubernetesHelper getServiceURL io.fabric8.kubernetes.client.KubernetesClient java.lang.String java.lang.String java.lang.String boolean</string>
     <string>new io.fabric8.openshift.client.DefaultOpenShiftClient</string>
     <string>staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods eachLine java.io.File groovy.lang.Closure</string>
     <string>staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods eachLine java.lang.String groovy.lang.Closure</string>
