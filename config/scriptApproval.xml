@@ -22,8 +22,11 @@
     <string>method io.fabric8.kubernetes.client.KubernetesClient nodes</string>
     <string>method io.fabric8.kubernetes.client.KubernetesClient services</string>
     <string>method java.io.File toURL</string>
+    <string>method java.io.File newOutputStream</string>
+    <string>method java.io.File close</string>
     <string>method java.io.Flushable flush</string>
     <string>method java.io.Writer write java.lang.String</string>
+    <string>method java.lang.AutoCloseable close</string>
     <string>method java.lang.Object getClass</string>
     <string>method java.lang.String isEmpty</string>
     <string>method java.lang.String replaceAll java.lang.String java.lang.String</string>
@@ -32,6 +35,7 @@
     <string>method java.net.HttpURLConnection disconnect</string>
     <string>method java.net.HttpURLConnection setRequestMethod java.lang.String</string>
     <string>method java.net.URL openConnection</string>
+    <string>method java.net.URL openStream</string>
     <string>method java.net.URLConnection connect</string>
     <string>method java.net.URLConnection getInputStream</string>
     <string>method java.net.URLConnection getOutputStream</string>
@@ -102,6 +106,8 @@
     <string>staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods toInteger java.lang.String</string>
     <string>staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods use java.lang.Object java.lang.Class groovy.lang.Closure</string>
     <string>staticMethod org.codehaus.groovy.runtime.ScriptBytecodeAdapter compareGreaterThan java.lang.Object java.lang.Object</string>
+    <string>staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods leftShift java.io.OutputStream java.lang.Object</string>
+    <string>staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods leftShift java.io.OutputStream java.io.InputStream</string>
     <string>staticMethod java.lang.Thread sleep long</string>
   </approvedSignatures>
   <aclApprovedSignatures>
