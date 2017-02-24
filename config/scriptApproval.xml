@@ -114,6 +114,17 @@
     <string>staticMethod java.lang.Thread sleep long</string>
     <string>staticMethod jenkins.model.Jenkins getInstance</string>
     <string>method jenkins.model.Jenkins getCloud java.lang.String</string>
+    <string>method jenkins.model.Jenkins getCloud java.lang.String</string>
+    <string>method io.fabric8.kubernetes.client.KubernetesClient namespaces</string>
+    <string>method io.fabric8.kubernetes.client.Client adapt java.lang.Class</string>
+    <string>method io.fabric8.openshift.client.OpenShiftClient projects</string>
+    <string>method io.fabric8.kubernetes.api.model.ObjectMeta getName</string>
+    <string>method io.fabric8.openshift.client.OpenShiftClient projectrequests</string>
+    <string>method io.fabric8.kubernetes.client.dsl.Createable createNew</string>
+    <string>method io.fabric8.openshift.api.model.ProjectRequestFluent withNewMetadata</string>
+    <string>method io.fabric8.kubernetes.api.model.ObjectMetaFluent withName java.lang.String</string>
+    <string>method io.fabric8.openshift.api.model.ProjectRequestFluent$MetadataNested endMetadata</string>
+    <string>method io.fabric8.openshift.api.model.ProjectRequestFluent withDisplayName java.lang.String</string>
   </approvedSignatures>
   <aclApprovedSignatures>
   </aclApprovedSignatures>
