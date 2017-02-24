@@ -110,6 +110,8 @@
     <string>staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods leftShift java.io.OutputStream java.lang.Object</string>
     <string>staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods leftShift java.io.OutputStream java.io.InputStream</string>
     <string>staticMethod java.lang.Thread sleep long</string>
+    <string>staticMethod jenkins.model.Jenkins getInstance</string>
+    <string>method jenkins.model.Jenkins getCloud java.lang.String</string>
   </approvedSignatures>
   <aclApprovedSignatures>
   </aclApprovedSignatures>
