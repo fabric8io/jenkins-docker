@@ -24,6 +24,7 @@
     <string>method java.io.File toURL</string>
     <string>method java.io.File newOutputStream</string>
     <string>method java.io.File close</string>
+    <string>method java.io.File exists</string>
     <string>method java.io.Flushable flush</string>
     <string>method java.io.Writer write java.lang.String</string>
     <string>method java.lang.AutoCloseable close</string>
