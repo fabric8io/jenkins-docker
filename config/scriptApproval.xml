@@ -47,6 +47,9 @@
     <string>method java.net.URLConnection setDoOutput boolean</string>
     <string>new io.fabric8.kubernetes.client.DefaultKubernetesClient</string>
     <string>method java.net.URLConnection setRequestProperty java.lang.String java.lang.String</string>
+    <string>jenkins.model.Jenkins getCloud java.lang.String</string>
+    <string>method org.jenkinsci.plugins.workflow.support.steps.build.RunWrapper getRawBuild</string>
+    <string>method org.jenkinsci.plugins.workflow.job.WorkflowRun getChangeSets</string>
     <string>method org.w3c.dom.Document getDocumentElement</string>
     <string>method org.w3c.dom.Document getElementsByTagName java.lang.String</string>
     <string>method org.w3c.dom.Element getElementsByTagName java.lang.String</string>
@@ -64,6 +67,7 @@
     <string>method io.fabric8.openshift.api.model.NamedTagEventList getItems</string>
     <string>method io.fabric8.openshift.api.model.TagEvent getImage</string>
     <string>method jenkins.model.Jenkins getCloud java.lang.String</string>
+    <string>method jenkins.model.Jenkins getCloud java.lang.String</string>
     <string>new groovy.json.JsonSlurper</string>
     <string>new groovy.json.JsonSlurperClassic</string>
     <string>new groovy.util.ConfigSlurper</string>
@@ -76,10 +80,13 @@
     <string>new java.lang.String java.lang.String</string>
     <string>new java.util.Properties</string>
     <string>staticField groovy.io.FileType FILES</string>
+    <string>staticMethod groovy.grape.Grape grab java.util.Map java.util.Map[]</string>
     <string>staticMethod groovy.xml.DOMBuilder newInstance</string>
     <string>staticMethod groovy.xml.XmlUtil serialize org.w3c.dom.Element</string>
     <string>staticMethod java.lang.System getenv</string>
     <string>staticMethod java.util.UUID randomUUID</string>
+    <string>staticMethod jenkins.model.Jenkins getInstance</string>string>
+    <string>staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods get java.util.Map java.lang.Object java.lang.Object</string>
     <string>staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods each java.lang.Object groovy.lang.Closure</string>
     <string>staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods eachDirRecurse java.io.File groovy.lang.Closure</string>
     <string>staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods eachFile java.io.File groovy.lang.Closure</string>
