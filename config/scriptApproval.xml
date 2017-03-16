@@ -47,7 +47,6 @@
     <string>method java.net.URLConnection setDoOutput boolean</string>
     <string>new io.fabric8.kubernetes.client.DefaultKubernetesClient</string>
     <string>method java.net.URLConnection setRequestProperty java.lang.String java.lang.String</string>
-    <string>jenkins.model.Jenkins getCloud java.lang.String</string>
     <string>method org.jenkinsci.plugins.workflow.support.steps.build.RunWrapper getRawBuild</string>
     <string>method org.jenkinsci.plugins.workflow.job.WorkflowRun getChangeSets</string>
     <string>method org.w3c.dom.Document getDocumentElement</string>
@@ -66,8 +65,6 @@
     <string>method io.fabric8.openshift.api.model.ImageStreamStatus getTags</string>
     <string>method io.fabric8.openshift.api.model.NamedTagEventList getItems</string>
     <string>method io.fabric8.openshift.api.model.TagEvent getImage</string>
-    <string>method jenkins.model.Jenkins getCloud java.lang.String</string>
-    <string>method jenkins.model.Jenkins getCloud java.lang.String</string>
     <string>new groovy.json.JsonSlurper</string>
     <string>new groovy.json.JsonSlurperClassic</string>
     <string>new groovy.util.ConfigSlurper</string>
@@ -121,7 +118,6 @@
     <string>staticMethod jenkins.model.Jenkins getInstance</string>
     <string>staticMethod java.lang.Thread sleep long</string>
     <string>staticMethod jenkins.model.Jenkins getInstance</string>
-    <string>method jenkins.model.Jenkins getCloud java.lang.String</string>
     <string>method jenkins.model.Jenkins getCloud java.lang.String</string>
     <string>method io.fabric8.kubernetes.client.KubernetesClient namespaces</string>
     <string>method io.fabric8.kubernetes.client.Client adapt java.lang.Class</string>
