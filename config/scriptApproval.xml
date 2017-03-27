@@ -65,6 +65,8 @@
     <string>method io.fabric8.openshift.api.model.ImageStreamStatus getTags</string>
     <string>method io.fabric8.openshift.api.model.NamedTagEventList getItems</string>
     <string>method io.fabric8.openshift.api.model.TagEvent getImage</string>
+    <string>method se.bjurr.gitchangelog.api.GitChangelogApi withFromRepo java.lang.String</string>
+    <string>method se.bjurr.gitchangelog.api.GitChangelogApi withTemplateContent java.lang.String</string>
     <string>new groovy.json.JsonSlurper</string>
     <string>new groovy.json.JsonSlurperClassic</string>
     <string>new groovy.util.ConfigSlurper</string>
@@ -118,6 +120,7 @@
     <string>staticMethod jenkins.model.Jenkins getInstance</string>
     <string>staticMethod java.lang.Thread sleep long</string>
     <string>staticMethod jenkins.model.Jenkins getInstance</string>
+    <string>staticMethod se.bjurr.gitchangelog.api.GitChangelogApi gitChangelogApiBuilder</string>
     <string>method jenkins.model.Jenkins getCloud java.lang.String</string>
     <string>method io.fabric8.kubernetes.client.KubernetesClient namespaces</string>
     <string>method io.fabric8.kubernetes.client.Client adapt java.lang.Class</string>

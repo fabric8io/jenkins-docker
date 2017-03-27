@@ -31,6 +31,7 @@ durable-task:latest
 email-ext:latest
 external-monitor-job:latest
 favorite:latest
+git-changelog:1.45
 git:latest
 git-client:latest
 git-server:latest
@@ -52,10 +53,12 @@ gravatar:latest
 handlebars:latest
 icon-shim:latest
 jackson2-api:latest
+javadoc:latest
 jquery-detached:latest
 junit:latest
 kerberos-sso:latest
 ldap:latest
+maven-plugin:latest
 mailer:latest
 mapdb-api:latest
 matrix-auth:latest
